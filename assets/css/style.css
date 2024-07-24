@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Roboto:wght@400;500;700;900&display=swap');
+
 /* --------------------
     基本設定
 -------------------- */
@@ -21,6 +23,12 @@ body {
     background-color: var(--colorBlueLight);
     color: var(--colorBlack);
     font-family: "Noto Sans JP", sans-serif;
+    letter-spacing: .05em;
+    line-height: 1.87;
+}
+
+.under_page{
+    padding-top: 115px;
 }
 
 .for-sp {
@@ -61,6 +69,7 @@ body {
     font-weight: bold;
     line-height: 1;
     letter-spacing: 0.05rem;
+    padding-bottom: 10px;
 }
 
 .paragraph700{ /* ボールドテキスト */
@@ -77,4 +86,159 @@ body {
     font-weight: 500;
     line-height: 1.9;
     letter-spacing: 0.05rem;
+}
+
+/* --------------------
+    下層header
+-------------------- */
+header.under_page{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    font-weight: 700;
+    color: var(--colorBlue);
+    background: var(--colorBlueLight);
+}
+
+.header_menu{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.current{
+    color: var(--colorBlue);
+    position: relative;
+    top: 3px;
+    border-bottom: solid 2px  var(--colorBlue);
+    padding-bottom: 4px;
+}
+
+.header_btn{
+    width: 160px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background: var(--colorBlue);
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.header_btn:hover{
+    color: var(--colorBlue);
+    background: #fff;
+}
+
+.header_tel{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.header_tel_number{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: -10px;
+}
+
+.hamburger-menu{
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    .hamburger-menu {
+        display: block;
+    }
+
+    .header_nav,
+    .header_tel{
+        display: none;
+    }
+}
+
+.hamburger-menu {
+    width: 20px;
+    height: 15px;
+    position: relative;
+    border: none;
+    background: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.hamburger-menu__bar {
+    display: inline-block;
+    width: 100%;
+    height: 2px;
+    background: #0064C3;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.5s;
+}
+
+.hamburger-menu__bar:first-child {
+    top: 0;
+}
+.hamburger-menu__bar:nth-child(2) {
+    top: 6px;
+}
+.hamburger-menu__bar:last-child {
+    bottom: 0;
+}
+.hamburger-menu--open .hamburger-menu__bar {
+    top: 50%;
+}
+.hamburger-menu--open .hamburger-menu__bar:first-child {
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+}
+.hamburger-menu--open .hamburger-menu__bar:last-child {
+    transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+}
+.hamburger-menu--open .hamburger-menu__bar:nth-child(2) {
+    display: none;
+}
+.navigation {
+    display: none;
+    background: #242424;
+    position: absolute;
+    width: 605px;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    background: #E6F3FF;
+    z-index: 999;
+}
+.navigation__list {
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 22vh);
+}
+.navigation__list-item {
+    padding: 15px 0;
+}
+.navigation__link {
+    color: #0064C3;
+    font-weight: 500;
+    text-decoration: none;
+    display: block;
+    transition: 0.5s;
+}
+.navigation__link:hover {
+    opacity: 0.6;
 }
