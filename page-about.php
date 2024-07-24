@@ -2,7 +2,7 @@
 
 <?php get_template_part('header_nav'); ?>
 
-<main class="about-page">
+<main class="under_page_main">
 
     <section class="kv">
         <div class="wrapper">
@@ -12,7 +12,7 @@
                 </div>
                 <div class="kv_right">
                     <p class="kv_title">私たちについて</p>
-                    <h2>お客様が住みやすい家づくり、<br>ご満足いただける仕事を</h2>
+                    <h2>お客様が住みやすい<br class="for-sp">家づくり、<br>ご満足いただける仕事を</h2>
                     <p class="kv_text">
                         そんな想いをモットーに、House Designに依頼して良かったと喜んでいただけることが私たちの一番の願いです。<br>
                         現場第一、確かな技術を持ったチームです。良い仕事をし続ける強い信念を持ち、お客様の「ありがとう」の為に、誠意を持って日々全力で努力して参ります。
@@ -33,6 +33,7 @@
             <div>
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about/kv_bottom4.jpg">
             </div>
+            <img class="for-sp" src="<?php echo get_template_directory_uri(); ?>/assets/images/about/kv_bottom.png">
         </div>
     </section>
 
