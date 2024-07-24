@@ -1,0 +1,80 @@
+/* --------------------
+    基本設定
+-------------------- */
+:root {
+    /* 色 */
+    --colorBlack: #333;
+    --colorBlue: #12577D;
+    --colorBlueDark: #508CA5;
+    --colorBlueLight: #DCE6F0;
+    --colorRed: #B10F0F;
+    --colorWhite: #fff;
+    --colorWhiteBg: #FAFAFF;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    background-color: var(--colorBlueLight);
+    color: var(--colorBlack);
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+.for-sp {
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+    .for-sp {
+        display: block;
+    }
+    .for-pc {
+        display: none !important;
+    }
+}
+
+/* --------------------
+    共通パーツ
+-------------------- */
+.pageTitle{ /* ページタイトル */
+    color: var(--colorBlack);
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0.09rem;
+}
+
+.secTitle{ /* セクションタイトル */
+    color: var(--colorBlack);
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0.05rem;
+}
+
+.secTitleEn{ /* 英語タイトル */
+    color: var(--colorBlue);
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1;
+    letter-spacing: 0.05rem;
+}
+
+.paragraph700{ /* ボールドテキスト */
+    color: var(--colorBlack);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 2;
+    letter-spacing: 0.05rem;
+}
+
+.paragraph500{ /* ミディアムテキスト */
+    color: var(--colorBlack);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.9;
+    letter-spacing: 0.05rem;
+}
