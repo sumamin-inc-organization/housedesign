@@ -290,6 +290,7 @@ label[for="agree_privacy"] {
     .contact_title {
         text-align: center;
         font-size: 28px;
+        margin-top: 10px;
     }
 
     .contact_text_bottom {
@@ -298,6 +299,11 @@ label[for="agree_privacy"] {
 
     .contact_description {
         text-align: center;
+        line-height: 2;
+    }
+
+    .contact_form_description {
+        margin-bottom: 26px;
     }
 
     .contact_form_description p {

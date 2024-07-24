@@ -15,8 +15,8 @@ Template Name: contact
                     <h1 class="page_title contact_title">お問い合わせ</h1>
                 </div>
                 <div class="contact_text_bottom">
-                    <p class="contact_description">雨漏りや外壁工事、ベランダの修復などお住まいに関するあらゆることに対応いたします。
-                    お住まいに関することでお困りのことがありましたら、まずはお気軽にお問い合わせください。</p>
+                    <p class="contact_description">雨漏りや外壁工事、ベランダの修復など<br class="for-sp">お住まいに関するあらゆることに<br class="for-sp">対応いたします。<br class="for-sp">
+                    お住まいに関することで<br class="for-sp">お困りのことがありましたら、<br class="for-sp">まずはお気軽にお問い合わせください。</p>
                 </div>
             </div>
             <div class="contact_form_wrap">
