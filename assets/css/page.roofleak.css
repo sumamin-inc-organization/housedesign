@@ -77,6 +77,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
+    justify-content: center;
 }
 
 .check_item{
@@ -98,6 +99,10 @@
     z-index: 1;
     font-weight: 700;
     letter-spacing: 1.6px;
+}
+
+.wide_label{
+    width: 200px;
 }
 
 .construction {
@@ -241,13 +246,15 @@
     }
 
     .works_kv{
-        gap: 40px;
+        grid-template-columns: 1fr 90% 1fr;
+        gap: 40px 0;
         margin-top: 10px;
     }
 
     .works_kv_top{
         grid-column: 2;
         margin: auto;
+        text-align: center;
     }
 
     .works_kv_left{
@@ -268,10 +275,16 @@
 
     .check_content{
         gap: 20px 10px;
+        justify-content: start;
     }
 
     .check_item {
         width: calc((100% - 10px) / 2);
+    }
+
+    .wide_label{
+        font-size: 14px;
+        width: 160px;
     }
 
     .construction {
