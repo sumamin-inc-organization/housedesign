@@ -27,6 +27,18 @@ body {
     line-height: 1.87;
 }
 
+.wrapper{
+    max-width: 1200px;
+    margin: auto;
+}
+
+@media (max-width: 1300px) {
+    .wrapper
+    {
+        max-width: 90%;
+    }
+}
+
 .under_page_main{
     padding-top: 115px;
 }
@@ -97,6 +109,10 @@ body {
 /* --------------------
     下層header
 -------------------- */
+header{
+    z-index: 999;
+}
+
 .under_page_header{
     position: fixed;
     width: 100%;

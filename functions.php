@@ -33,16 +33,8 @@ function load_assets() {
         wp_enqueue_style( 'about-css', get_template_directory_uri() . '/assets/css/page.about.css', array(), filemtime( get_template_directory() . '/assets/css/page.about.css' ) );
         wp_enqueue_script('about-script', get_template_directory_uri() . '/assets/js/page.about.js', array(), null, true);
     }
-    if ( is_page( 'roofleak' ) ) {
-        wp_enqueue_style( 'roofleak-css', get_template_directory_uri() . '/assets/css/page.roofleak.css', array(), filemtime( get_template_directory() . '/assets/css/page.roofleak.css' ) );
-        wp_enqueue_script('roofleak-script', get_template_directory_uri() . '/assets/js/page.roofleak.js', array(), null, true);
-    }
-    if ( is_page( 'wall' ) ) {
-        wp_enqueue_style( 'roofleak-css', get_template_directory_uri() . '/assets/css/page.roofleak.css', array(), filemtime( get_template_directory() . '/assets/css/page.roofleak.css' ) );
-        wp_enqueue_script('roofleak-script', get_template_directory_uri() . '/assets/js/page.roofleak.js', array(), null, true);
-    }
-    if ( is_page( 'balcony' ) ) {
-        wp_enqueue_style( 'roofleak-css', get_template_directory_uri() . '/assets/css/page.roofleak.css', array(), filemtime( get_template_directory() . '/assets/css/page.roofleak.css' ) );
+    if ( is_page( array('roofleak', 'wall', 'balcony') ) ) {
+        wp_enqueue_style('roofleak-css', get_template_directory_uri() . '/assets/css/page.roofleak.css', array(), filemtime(get_template_directory() . '/assets/css/page.roofleak.css'));
         wp_enqueue_script('roofleak-script', get_template_directory_uri() . '/assets/js/page.roofleak.js', array(), null, true);
     }
     if ( is_singular( 'works' ) || is_post_type_archive( 'works' ) ) {
