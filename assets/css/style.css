@@ -427,3 +427,21 @@ header{
         padding-bottom: 60px;
     }
 }
+
+/* --------------------
+    title animation
+-------------------- */
+.fadein_up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.fadein_up.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fadein_up_second{
+    transition-delay: 0.3s;
+}

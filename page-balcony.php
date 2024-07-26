@@ -8,18 +8,18 @@
 
         <section class="works_kv">
             <div class="works_kv_top for-sp">
-                <p class="secTitleEn">BALCONY REPAIR</p>
-                <h2 class="pageTitle">ベランダ修復</h2>
+                <p class="secTitleEn fadein_up">BALCONY REPAIR</p>
+                <h2 class="pageTitle fadein_up fadein_up_second">ベランダ修復</h2>
             </div>
             <div class="works_kv_content">
                 <div class="works_kv_left">
-                    <p class="secTitleEn">BALCONY REPAIR</p>
-                    <h2 class="pageTitle">ベランダ修復</h2>
+                    <p class="secTitleEn fadein_up">BALCONY REPAIR</p>
+                    <h2 class="pageTitle fadein_up fadein_up_second">ベランダ修復</h2>
                 </div>
                 <div class="works_kv_right">
                     <picture>
-                        <source srcset="assets/images/balcony/sp/kv.png" media="(max-width: 767px)" />
-                        <img src="assets/images/balcony/kv.png">
+                        <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/balcony/sp/kv.png" media="(max-width: 767px)" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/balcony/kv.png">
                     </picture>
                     <div class="kv_deco"></div>
                 </div>
@@ -29,29 +29,29 @@
         <section class="check">
             <div class="wrapper">
                 <div class="section_title">
-                    <p class="secTitleEn">CHECK</p>
-                    <h2 class="secTitle">ベランダの劣化チェック</h2>
+                    <p class="secTitleEn fadein_up">CHECK</p>
+                    <h2 class="secTitle fadein_up fadein_up_second">ベランダの劣化チェック</h2>
                     <p class="section_text">ベランダは常に紫外線と風雨にさらされる過酷な環境です。ちょっとした塗装のヒビでも、<br>すぐに劣化が進してしまいます。少しでも違和感を感じたら、早めにご相談ください。</p>
                 </div>
                 <div class="check_content">
                     <div class="check_item">
-                        <img src="assets/images/balcony/check1.jpg">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/balcony/check1.jpg">
                         <p class="check_label">床面の色褪せ</p>
                     </div>
                     <div class="check_item">
-                        <img src="assets/images/balcony/check2.jpg">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/balcony/check2.jpg">
                         <p class="check_label">床面の劣化</p>
                     </div>
                     <div class="check_item">
-                        <img src="assets/images/balcony/check3.jpg">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/balcony/check3.jpg">
                         <p class="check_label">サビ</p>
                     </div>
                     <div class="check_item">
-                        <img src="assets/images/balcony/check4.jpg">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/balcony/check4.jpg">
                         <p class="check_label">雨漏り</p>
                     </div>
                     <div class="check_item">
-                        <img src="assets/images/balcony/check5.jpg">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/balcony/check5.jpg">
                         <p class="check_label">雑草</p>
                     </div>
                 </div>
@@ -61,27 +61,27 @@
         <section class="construction">
             <div class="wrapper">
                 <div class="section_title">
-                    <p class="secTitleEn">CONSTRUCTION CONTENTS</p>
-                    <h2 class="secTitle">施工内容</h2>
+                    <p class="secTitleEn fadein_up">CONSTRUCTION CONTENTS</p>
+                    <h2 class="secTitle fadein_up fadein_up_second">施工内容</h2>
                     <p class="section_text">ベランダの状態を細かくチェックし、迅速に対応しております。<br>大規模な工事になる前に、確実に施工を行います。</p>
                 </div>
                 <div class="construction_content">
                     <div class="construction_item">
-                        <div class="construction_img"><img src="assets/images/balcony/construction1.jpg"></div>
+                        <div class="construction_img"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/balcony/construction1.jpg"></div>
                         <div class="construction_text">
                             <h3>FRP防水</h3>
                             <p>ベランダの床面にプラスチック繊維のシートを敷き、表面をトップコートと呼ばれる樹脂で固めます。硬度があり軽量で工期も短いため、多くの家屋で採用されています。</p>
                         </div>
                     </div>
                     <div class="construction_item">
-                        <div class="construction_img"><img src="assets/images/balcony/construction2.jpg"></div>
+                        <div class="construction_img"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/balcony/construction2.jpg"></div>
                         <div class="construction_text">
                             <h3>シート防水</h3>
                             <p>塩化ビニールや合成ゴムでできたシートを貼る防水工事です。広い面積でも一度に防水処理を行えます。</p>
                         </div>
                     </div>
                     <div class="construction_item">
-                        <div class="construction_img"><img src="assets/images/balcony/construction3.jpg"></div>
+                        <div class="construction_img"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/balcony/construction3.jpg"></div>
                         <div class="construction_text">
                             <h3>ウレタン防水</h3>
                             <p>液体状のウレタン樹脂を塗り重ねることで水を通さない防水層を形成 できます。 液体（塗料状）の素材を塗り広げることで防水施工することを塗膜防水と呼び、継ぎ目なく施工できることが特徴です。</p>
@@ -94,8 +94,8 @@
         <section class="flow">
             <div class="wrapper">
                 <div class="section_title">
-                    <p class="secTitleEn">FLOW</p>
-                    <h2 class="secTitle">施工の流れ</h2>
+                    <p class="secTitleEn fadein_up">FLOW</p>
+                    <h2 class="secTitle fadein_up fadein_up_second">施工の流れ</h2>
                 </div>
                 <div class="flow_content">
                     <div class="flow_item">
@@ -149,8 +149,8 @@
     <section class="works">
         <div class="wrapper">
             <div class="section_title">
-                <p class="secTitleEn">WORKS</p>
-                <h2 class="secTitle">施工事例</h2>
+                <p class="secTitleEn fadein_up">WORKS</p>
+                <h2 class="secTitle fadein_up fadein_up_second">施工事例</h2>
                 <p class="section_text">内側からも外側からも影響が出る外壁工事｡<br>最後まで丁寧な施工に、ご好評いただいております。</p>
             </div>
             <div class="works_content">

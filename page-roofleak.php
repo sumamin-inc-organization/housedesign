@@ -8,18 +8,18 @@
 
         <section class="works_kv">
             <div class="works_kv_top for-sp">
-                <p class="secTitleEn">ROOF LEAK</p>
-                <h2 class="pageTitle">雨漏り</h2>
+                <p class="secTitleEn fadein_up">ROOF LEAK</p>
+                <h2 class="pageTitle fadein_up fadein_up_second">雨漏り</h2>
             </div>
             <div class="works_kv_content">
                 <div class="works_kv_left">
-                    <p class="secTitleEn">ROOF LEAK</p>
-                    <h2 class="pageTitle">雨漏り</h2>
+                    <p class="secTitleEn fadein_up">ROOF LEAK</p>
+                    <h2 class="pageTitle fadein_up fadein_up_second">雨漏り</h2>
                 </div>
                 <div class="works_kv_right">
                     <picture>
-                        <source srcset="assets/images/roofleak/sp/kv.png" media="(max-width: 767px)" />
-                        <img src="assets/images/roofleak/kv.png">
+                        <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/roofleak/sp/kv.png" media="(max-width: 767px)" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/roofleak/kv.png">
                     </picture>
                     <div class="kv_deco"></div>
                 </div>
@@ -29,33 +29,33 @@
         <section class="check">
             <div class="wrapper">
                 <div class="section_title">
-                    <p class="secTitleEn">CHECK</p>
-                    <h2 class="secTitle">雨漏り箇所のチェック</h2>
+                    <p class="secTitleEn fadein_up">CHECK</p>
+                    <h2 class="secTitle fadein_up fadein_up_second">雨漏り箇所のチェック</h2>
                     <p class="section_text">幅広い雨漏り修理に対応しております。<br>雨漏りが原因で家屋の骨となる木部などが腐食したり、大きな被害が出る前に一度ご相談ください！</p>
                 </div>
                 <div class="check_content">
                     <div class="check_item">
-                        <img src="assets/images/roofleak/check1.jpg">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/roofleak/check1.jpg">
                         <p class="check_label">屋根・天井</p>
                     </div>
                     <div class="check_item">
-                        <img src="assets/images/roofleak/check2.jpg">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/roofleak/check2.jpg">
                         <p class="check_label">壁</p>
                     </div>
                     <div class="check_item">
-                        <img src="assets/images/roofleak/check3.jpg">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/roofleak/check3.jpg">
                         <p class="check_label">窓</p>
                     </div>
                     <div class="check_item">
-                        <img src="assets/images/roofleak/check4.jpg">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/roofleak/check4.jpg">
                         <p class="check_label">あまどい</p>
                     </div>
                     <div class="check_item">
-                        <img src="assets/images/roofleak/check5.jpg">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/roofleak/check5.jpg">
                         <p class="check_label">外壁</p>
                     </div>
                     <div class="check_item">
-                        <img src="assets/images/roofleak/check6.jpg">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/roofleak/check6.jpg">
                         <p class="check_label">ベランダ</p>
                     </div>
                 </div>
@@ -65,41 +65,41 @@
         <section class="construction">
             <div class="wrapper">
                 <div class="section_title">
-                    <p class="secTitleEn">CONSTRUCTION CONTENTS</p>
-                    <h2 class="secTitle">施工内容</h2>
+                    <p class="secTitleEn fadein_up">CONSTRUCTION CONTENTS</p>
+                    <h2 class="secTitle fadein_up fadein_up_second">施工内容</h2>
                     <p class="section_text">雨漏りは原因が特定できなければ正しい処方は出来ません。<br class="for-pc">雨漏りの原因はさまざまですが、当社は確実に屋根へ上り原因を究明いたします。</p>
                 </div>
                 <div class="construction_content">
                     <div class="construction_item">
-                        <div class="construction_img"><img src="assets/images/roofleak/construction1.jpg"></div>
+                        <div class="construction_img"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/roofleak/construction1.jpg"></div>
                         <div class="construction_text">
                             <h3>コーキングの修理</h3>
                             <p>劣化したコーキング剤を撤去し、コーキング剤を流し込む箇所以外をマスキングテープで保護します。その後、プライマーを塗布して、コーキング剤を流し込みヘラで整えます。</p>
                         </div>
                     </div>
                     <div class="construction_item">
-                        <div class="construction_img"><img src="assets/images/roofleak/construction2.jpg"></div>
+                        <div class="construction_img"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/roofleak/construction2.jpg"></div>
                         <div class="construction_text">
                             <h3>棟板金の交換</h3>
                             <p>ストレート系の屋根に設置されている棟板金を交換します。屋根と屋根の接合部分に棟板金を使用して、雨水の侵入を防いだり、屋根材を固定します。</p>
                         </div>
                     </div>
                     <div class="construction_item">
-                        <div class="construction_img"><img src="assets/images/roofleak/construction3.jpg"></div>
+                        <div class="construction_img"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/roofleak/construction3.jpg"></div>
                         <div class="construction_text">
                             <h3>屋根カバー工法</h3>
                             <p>既存の屋根の上にルーフィング（防水紙）を貼り、その上に軽い金属の屋根を張ります。 塗装よりも長持ちし、既存の屋根の解体や処分する手間がかからないので、葺き替えよりもコストを安くできる上、廃材も少ないエコな工法です。</p>
                         </div>
                     </div>
                     <div class="construction_item">
-                        <div class="construction_img"><img src="assets/images/roofleak/construction4.jpg"></div>
+                        <div class="construction_img"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/roofleak/construction4.jpg"></div>
                         <div class="construction_text">
                             <h3>屋根の葺き替え・葺き直し</h3>
                             <p>既存の屋根材を再利用または新たな屋根材を使用し、屋根のメンテナンスをおこないます。</p>
                         </div>
                     </div>
                     <div class="construction_item">
-                        <div class="construction_img"><img src="assets/images/roofleak/construction5.jpg"></div>
+                        <div class="construction_img"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/roofleak/construction5.jpg"></div>
                         <div class="construction_text">
                             <h3>屋上の防水</h3>
                             <p>傾斜のない平面な陸屋根に防水加工を施す工事です。溜まった雨水などが染み込み、雨漏りが起こるのを防ぎます。</p>
@@ -112,8 +112,8 @@
         <section class="flow">
             <div class="wrapper">
                 <div class="section_title">
-                    <p class="secTitleEn">FLOW</p>
-                    <h2 class="secTitle">施工の流れ</h2>
+                    <p class="secTitleEn fadein_up">FLOW</p>
+                    <h2 class="secTitle fadein_up fadein_up_second">施工の流れ</h2>
                 </div>
                 <div class="flow_content">
                     <div class="flow_item">
@@ -167,8 +167,8 @@
     <section class="works">
         <div class="wrapper">
             <div class="section_title">
-                <p class="secTitleEn">WORKS</p>
-                <h2 class="secTitle">施工事例</h2>
+                <p class="secTitleEn fadein_up">WORKS</p>
+                <h2 class="secTitle fadein_up fadein_up_second">施工事例</h2>
                 <p class="section_text">内側からも外側からも影響が出る外壁工事｡<br>最後まで丁寧な施工に、ご好評いただいております。</p>
             </div>
             <div class="works_content">

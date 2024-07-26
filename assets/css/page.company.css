@@ -1,0 +1,281 @@
+/* kv --------------------------------------------------------------------------- */
+
+.works_kv{
+    padding: 60px 0 140px;
+    display: grid;
+    grid-template-columns: 1fr 1040px 1fr;
+}
+
+.works_kv_content{
+    grid-column: 2/4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.works_kv_left{
+    margin-bottom: 50px;
+}
+
+.works_kv_right{
+    width: 77%;
+    position: relative;
+}
+
+.works_kv_right img{
+    max-height: 650px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.kv_deco {
+    content: "";
+    background: var(--colorBlueLight);
+    height: 100%;
+    width: 10vw;
+    position: absolute;
+    top: 0;
+    right: 50px;
+    clip-path: polygon(45% 0%, 60% 0%, 15% 100%, 0% 100%);
+}
+
+.flow_text {
+    overflow: hidden;
+    display: flex;
+    width: 100vw;
+    margin-inline: calc(50% - 50vw);
+    position: absolute;
+    top: -190px;
+}
+
+.flow_text_item {
+    flex-shrink: 0;
+    white-space: nowrap;
+    font-family: "Roboto", sans-serif;;
+    font-size: 335px;
+    font-weight: 700;
+    letter-spacing: .025em;
+    color: var(--colorBlueLight);
+    padding-right: 60px;
+}
+
+.flow_text_item:nth-child(odd) {
+    animation: MoveLeft 24s -12s infinite linear;
+}
+
+.flow_text_item:nth-child(even) {
+    animation: MoveLeft2 24s infinite linear;
+}
+
+.company{
+    padding: 140px 0;
+    background: transparent linear-gradient(180deg, #DCE6F0 0%, #508CA5 100%) 0% 0% no-repeat padding-box;
+}
+
+.company_content{
+    background: #fff;
+    border: 10px;
+    display: flex;
+    flex-flow: column;
+    gap: 30px;
+    padding: 80px;
+    border-radius: 10px;
+}
+
+.company_item{
+    display: flex;
+    gap: 150px;
+    padding-bottom: 30px;
+    border-bottom: solid 1px var(--colorBlue);
+}
+
+.company_item:last-child{
+    border: none;
+    padding-bottom: 0;
+}
+
+.company_label{
+    width: 90px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-weight: 700;
+    color: var(--colorBlue);
+}
+
+.company_text{
+    font-weight: 500;
+}
+
+
+@keyframes flow {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes MoveLeft {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes MoveLeft2 {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-200%);
+    }
+}
+
+.message{
+    background: #fff;
+    padding: 300px 0 140px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.message_content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.message_inner{
+    width: 580px;
+}
+
+.message_inner h3{
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding-bottom: 40px;
+}
+
+.message_text{
+    font-weight: 500;
+    text-align: justify;
+}
+
+.message_name{
+    font-weight: 500;
+    text-align: right;
+    padding-top: 40px;
+}
+
+.name{
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding-left: 15px;
+    padding-right: 20px;
+}
+
+.name_en{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+@media (max-width: 1200px) {
+    .works_kv{
+        grid-template-columns: 1fr 80% 1fr;
+    }
+}
+
+@media (max-width: 1024px) {
+    .flow_text{
+        top: -112px;
+    }
+    
+    .flow_text_item{
+        font-size: 200px;
+    }
+
+    .message_inner {
+        width: 60vw;
+    }
+
+    .company_item{
+        gap: 60px;
+    }
+}
+
+@media (max-width: 767px) {
+    .works_kv{
+        grid-template-columns: 1fr 90% 1fr;
+        gap: 40px 0;
+        padding: 10px 0 50px;
+    }
+
+    .works_kv_top{
+        grid-column: 2;
+        margin: auto;
+        text-align: center;
+    }
+
+    .works_kv_left{
+        display: none;
+    }
+
+    .works_kv_right{
+        width: 100%;
+    }
+
+    .works_kv_content{
+        justify-content: end;
+    }
+
+    .kv_deco {
+        width: 20vw;
+        clip-path: polygon(75% 0%, 90% 0%, 35% 100%, 20% 100%);
+    }
+
+    .flow_text {
+        top: -85px;
+    }
+
+    .flow_text_item{
+        font-size: 150px;
+    }
+
+    .message {
+        padding: 140px 0 80px;
+    }
+
+    .message_content{
+        flex-flow: column;
+        gap: 55px;
+    }
+
+    .message_inner{
+        width: 100%;
+    }
+
+    .message_inner h3{
+        padding-bottom: 30px;
+    }
+
+    .message_name{
+        padding-top: 30px;
+    }
+
+    .company{
+        padding: 80px 0;
+    }
+
+    .company_content{
+        padding: 30px 20px;
+        gap: 15px;
+    }
+
+    .company_item{
+        padding-bottom: 15px;
+        flex-flow: column;
+        gap: 10px;
+    }
+}

@@ -1,14 +1,3 @@
-:root {
-    /* 色 */
-    --colorBlack: #333;
-    --colorBlue: #12577D;
-    --colorBlueDark: #508CA5;
-    --colorBlueLight: #DCE6F0;
-    --colorRed: #B10F0F;
-    --colorWhite: #fff;
-    --colorWhiteBg: #FAFAFF;
-}
-
 /* kv --------------------------------------------------------------------------- */
 
 .works_kv{
@@ -267,6 +256,11 @@
 
     .works_kv_content{
         justify-content: end;
+    }
+
+    .kv_deco {
+        width: 20vw;
+        clip-path: polygon(75% 0%, 90% 0%, 35% 100%, 20% 100%);
     }
 
     .check {
