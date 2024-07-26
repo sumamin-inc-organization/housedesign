@@ -27,6 +27,18 @@ body {
     line-height: 1.87;
 }
 
+.wrapper{
+    max-width: 1200px;
+    margin: auto;
+}
+
+@media (max-width: 1300px) {
+    .wrapper
+    {
+        max-width: 90%;
+    }
+}
+
 .under_page_main{
     padding-top: 115px;
 }
@@ -97,6 +109,10 @@ body {
 /* --------------------
     下層header
 -------------------- */
+header{
+    z-index: 999;
+}
+
 .under_page_header{
     position: fixed;
     width: 100%;
@@ -410,4 +426,22 @@ body {
     .navigation_btn{
         padding-bottom: 60px;
     }
+}
+
+/* --------------------
+    title animation
+-------------------- */
+.fadein_up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.fadein_up.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fadein_up_second{
+    transition-delay: 0.3s;
 }

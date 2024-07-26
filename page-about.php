@@ -11,8 +11,8 @@
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about/kv.svg">
                 </div>
                 <div class="kv_right">
-                    <p class="kv_title">私たちについて</p>
-                    <h2>お客様が住みやすい<br class="for-sp">家づくり、<br>ご満足いただける仕事を</h2>
+                    <p class="kv_title fadein_up">私たちについて</p>
+                    <h2 class="fadein_up fadein_up_second">お客様が住みやすい<br class="for-sp">家づくり、<br>ご満足いただける仕事を</h2>
                     <p class="kv_text">
                         そんな想いをモットーに、House Designに依頼して良かったと喜んでいただけることが私たちの一番の願いです。<br>
                         現場第一、確かな技術を持ったチームです。良い仕事をし続ける強い信念を持ち、お客様の「ありがとう」の為に、誠意を持って日々全力で努力して参ります。
@@ -40,8 +40,8 @@
     <section class="reasons">
         <div class="wrapper">
             <div class="section_title">
-                <p class="secTitleEn">REASONS</p>
-                <h2 class="secTitle">選ばれる理由</h2>
+                <p class="secTitleEn fadein_up">REASONS</p>
+                <h2 class="secTitle fadein_up fadein_up_second">選ばれる理由</h2>
             </div>
             <div class="reasons_content">
                 <div class="reasons_item">
