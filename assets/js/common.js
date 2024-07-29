@@ -43,3 +43,26 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', checkFadeIn);
     checkFadeIn();
 });
+
+
+// column category
+document.addEventListener('DOMContentLoaded', function() {
+    var buttons = document.querySelectorAll('.category_btn');
+    var items = document.querySelectorAll('.column_item');
+
+    buttons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            var category = this.getAttribute('data-category');
+
+            items.forEach(function(item) {
+                var itemCategories = item.getAttribute('data-category').split(' ');
+                if (category === 'all') {
+                    item.style.display = 'block';
+                } else {
+                    var match = itemCategories.includes(category);
+                    item.style.display = match ? 'block' : 'none';
+                }
+            });
+        });
+    });
+});

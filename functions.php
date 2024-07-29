@@ -102,3 +102,98 @@ function custom_post_types() {
 	);
 }
 add_action('init', 'custom_post_types');
+
+
+// columnページ AJAXハンドラの追加
+function ajax_load_posts() {
+    // セキュリティチェック
+    check_ajax_referer('load_more_posts', 'security');
+
+    // カテゴリとページ番号を取得
+    $category = sanitize_text_field($_POST['category']);
+    $paged = intval($_POST['paged']);
+    
+    $args = array(
+        'post_type'      => 'column',
+        'posts_per_page' => 12,
+        'post_status'    => 'publish',
+        'orderby'        => 'date',
+        'order'          => 'DESC',
+        'paged'          => $paged,
+    );
+
+    // カテゴリフィルター
+    if ($category !== 'all') {
+        $args['tax_query'] = array(
+            array(
+                'taxonomy' => 'column-cat',
+                'field'    => 'slug',
+                'terms'    => $category,
+            ),
+        );
+    }
+
+    $query = new WP_Query($args);
+    
+    if ($query->have_posts()) :
+        while ($query->have_posts()) : $query->the_post();
+            $terms = get_the_terms(get_the_ID(), 'column-cat');
+            $term_slugs = array();
+            if (!empty($terms) && !is_wp_error($terms)) {
+                foreach ($terms as $term) {
+                    $term_slugs[] = $term->slug;
+                }
+            }
+?>
+            <a class="column_item" href="<?php the_permalink(); ?>" data-category="<?php echo esc_attr(implode(' ', $term_slugs)); ?>">
+                <div class="column_img">
+                    <?php if (has_post_thumbnail()) the_post_thumbnail('full'); ?>
+                </div>
+                <div class="column_text">
+                    <div class="column_text_top">
+                        <p class="column_date"><?php echo get_the_date('Y.m.d'); ?></p>
+                        <p class="column_category">
+                            <?php
+                            $term_names = array();
+                            foreach ($terms as $term) {
+                                $term_names[] = $term->name;
+                            }
+                            echo implode(', ', $term_names);
+                            ?>
+                        </p>
+                    </div>
+                    <p class="column_title"><?php the_title(); ?></p>
+                </div>
+            </a>
+<?php
+        endwhile;
+        // ページネーションリンクを追加
+        echo '<div class="pagination">';
+        echo paginate_links(array(
+            'total'   => $query->max_num_pages,
+            'prev_text' => '&laquo;',
+            'next_text' => '&raquo;',
+        ));
+        echo '</div>';
+    else :
+        echo 'ニュースが見つかりませんでした。';
+    endif;
+
+    wp_die();
+}
+
+add_action('wp_ajax_load_posts', 'ajax_load_posts');
+add_action('wp_ajax_nopriv_load_posts', 'ajax_load_posts');
+
+// AJAX用のURLをフロントエンドに渡す
+function my_enqueue_scripts() {
+    wp_enqueue_script('jquery');
+    wp_enqueue_script('custom-js', get_template_directory_uri() . '/assets/js/custom.js', array('jquery'), null, true);
+
+    // ajaxurlをローカライズ
+    wp_localize_script('custom-js', 'ajax_params', array(
+        'ajax_url' => admin_url('admin-ajax.php'),
+        'security' => wp_create_nonce('load_more_posts'),
+    ));
+}
+add_action('wp_enqueue_scripts', 'my_enqueue_scripts');
