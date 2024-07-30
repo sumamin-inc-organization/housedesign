@@ -66,3 +66,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// fade in header
+window.addEventListener('scroll', function() {
+    const headerFixed = document.querySelector('.header_fixed');
+    if (window.scrollY >= 800) {
+        headerFixed.classList.add('show');
+    } else {
+        headerFixed.classList.remove('show');
+    }
+});

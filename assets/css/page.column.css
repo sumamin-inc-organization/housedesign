@@ -42,6 +42,11 @@
     border: solid 1px var(--colorBlue);
 }
 
+.category_btn.category_active{
+    background: #00000000;
+    border: solid 1px var(--colorBlue);
+}
+
 .column_content{
     display: flex;
     flex-wrap: wrap;
@@ -105,11 +110,21 @@
     font-weight: 700;
 }
 
+.pagination ul.page-numbers{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+}
+
 .page-numbers.current{
     color: var(--colorBlue);
 }
 
 .prev, .next {
+    display: block;
     background: #fff;
     width: 30px;
     height: 30px;
@@ -147,7 +162,7 @@
     width: 10px;
     height: 1px;
     position: absolute;
-    top: 47%;
+    top: 48%;
     right: 32%;
     background-color: var(--colorBlue);
     transition: 0.3s;

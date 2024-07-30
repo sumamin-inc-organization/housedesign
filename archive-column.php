@@ -12,10 +12,10 @@
             <div class="category">
                 <p>カテゴリー</p>
                 <div class="category_flex">
-                    <a class="category_btn" data-category="all">すべて</a>
-                    <a class="category_btn" data-category="roofleak">雨漏り</a>
-                    <a class="category_btn" data-category="wall">外壁工事</a>
-                    <a class="category_btn" data-category="balcony">ベランダ修復</a>
+                    <a href="<?= get_post_type_archive_link('column') ?>" class="category_btn category_active" data-category="all">すべて</a>
+                    <a href="<?= get_permalink(get_page_by_path('column_roofleak')) ?>" class="category_btn" data-category="roofleak">雨漏り</a>
+                    <a href="<?= get_permalink(get_page_by_path('column_wall')) ?>" class="category_btn" data-category="wall">外壁工事</a>
+                    <a href="<?= get_permalink(get_page_by_path('column_balcony')) ?>" class="category_btn" data-category="balcony">ベランダ修復</a>
                 </div>
             </div>
             <div class="column_content">

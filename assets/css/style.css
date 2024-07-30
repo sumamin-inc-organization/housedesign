@@ -111,9 +111,6 @@ body {
 -------------------- */
 header{
     z-index: 999;
-}
-
-.under_page_header{
     position: fixed;
     width: 100%;
     display: flex;
@@ -199,7 +196,7 @@ header{
     text-decoration: none;
 }
 
-.under_page_header .current{
+header .current{
     color: var(--colorBlue);
     position: relative;
     top: 3px;
@@ -256,7 +253,7 @@ header{
 }
 
 @media (max-width: 767px) {
-    .under_page_header{
+    header{
         padding: 20px;
         align-items: start;
     }

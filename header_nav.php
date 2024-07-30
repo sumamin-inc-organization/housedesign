@@ -1,4 +1,4 @@
-<header class="under_page_header">
+<header>
     <h1 class="header_logo"><a href="<?= home_url() ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/logo.svg" alt="TONAMI"></a></h1>
     <div class="header_menu">
         <ul class="header_nav">

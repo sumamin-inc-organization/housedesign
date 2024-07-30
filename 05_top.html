@@ -7,7 +7,7 @@
         <title>House Design</title>
         <link rel="stylesheet" href="assets/css/reset.css">
         <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="assets/css/page.company.css">
+        <link rel="stylesheet" href="assets/css/page.top.css">
         <script type="text/javascript" src="assets/js/common.js" defer></script>
 
         <!-- slider -->
@@ -20,7 +20,44 @@
 
     <body>
 
-        <header class="under_page_header">
+        <header class="header_top">
+            <h1 class="header_logo"><a href="#top"><img src="assets/images/top/logo.svg" alt="logo"></a></h1>
+            <div class="header_menu">
+                <a href="#" class="header_nav">HOME</a>
+                <a href="#" class="header_nav">私たちについて</a>
+                <a href="#" class="header_nav">事業内容</a>
+                <a href="#" class="header_nav">施工事例</a>
+                <a href="#" class="header_nav">コラム</a>
+                <a href="#" class="header_nav">会社概要</a>
+                <a href="#contact" class="header_btn">お問い合わせ</a>
+                <div class="header_tel">
+                    <a class="header_tel_number" href="tel:0467-84-7404">
+                        <img src="assets/images/top/phone.svg">
+                        <span>0467-84-7404</span>
+                    </a>
+                    <p class="header_tel_open">9:00〜18:00<span>(日・祝除く)</span></p>
+                </div>
+                <!-- hamburger -->
+                <button class="hamburger-menu" id="js-hamburger-menu">
+                    <span class="hamburger-menu__bar"></span>
+                    <span class="hamburger-menu__bar"></span>
+                    <span class="hamburger-menu__bar"></span>
+                </button>
+                <nav class="navigation">
+                    <div class="header_bg"></div>
+                    <ul class="navigation__list">
+                        <li class="navigation__list-item"><a href="#" class="navigation__link">HOME</a></li>
+                        <li class="navigation__list-item"><a href="#" class="navigation__link">私たちについて</a></li>
+                        <li class="navigation__list-item"><a href="#" class="navigation__link">事業内容</a></li>
+                        <li class="navigation__list-item"><a href="#" class="navigation__link">施工事例</a></li>
+                        <li class="navigation__list-item"><a href="#" class="navigation__link">コラム</a></li>
+                        <li class="navigation__list-item"><a href="#" class="navigation__link">会社概要</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <header class="header_fixed">
             <h1 class="header_logo"><a href="#top"><img src="assets/images/common/logo.svg" alt="logo"></a></h1>
             <div class="header_menu">
                 <a href="#" class="header_nav">HOME</a>
@@ -57,25 +94,18 @@
             </div>
         </header>
 
-        <main class="under_page_main">
+        <main>
 
-            <section class="works_kv">
-                <div class="works_kv_top for-sp">
-                    <p class="secTitleEn fadein_up">COMPANY</p>
-                    <h2 class="pageTitle fadein_up fadein_up_second">会社概要</h2>
-                </div>
-                <div class="works_kv_content">
-                    <div class="works_kv_left">
-                        <p class="secTitleEn fadein_up">COMPANY</p>
-                        <h2 class="pageTitle fadein_up fadein_up_second">会社概要</h2>
-                    </div>
-                    <div class="works_kv_right">
-                        <picture>
-                            <source srcset="assets/images/company/sp/kv.png" media="(max-width: 767px)" />
-                            <img src="assets/images/company/kv.png">
-                        </picture>
-                        <div class="kv_deco"></div>
-                    </div>
+            <section class="kv">
+                <div class="kv_content">
+                    <video class="kv_movie" width="100vw" height="100vh" autoplay muted playsinline loop>
+                        <source src="assets/images/top/kv.mp4" type="video/mp4">
+                        お使いのブラウザは動画タグをサポートしていません。
+                    </video>
+                    <video class="kv_movie_sp" width="100vw" height="100vh" autoplay muted playsinline loop>
+                        <source src="assets/images/top/sp/kv.mp4" type="video/mp4">
+                        お使いのブラウザは動画タグをサポートしていません。
+                    </video>
                 </div>
             </section>
 
