@@ -16,8 +16,9 @@ Template Name: column_balcony
             <h2 class="pageTitle fadein_up fadein_up_second">屋根の豆知識</h2>
 
             <div class="category">
-                <p>カテゴリー</p>
+                <p class="category_label">カテゴリー</p>
                 <div class="category_flex">
+                    <p class="category_label_sp">カテゴリー</p>
                     <a href="<?= get_post_type_archive_link('column') ?>" class="category_btn" data-category="all">すべて</a>
                     <a href="<?= get_permalink(get_page_by_path('column_roofleak')) ?>" class="category_btn" data-category="roofleak">雨漏り</a>
                     <a href="<?= get_permalink(get_page_by_path('column_wall')) ?>" class="category_btn" data-category="wall">外壁工事</a>
