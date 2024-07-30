@@ -210,7 +210,7 @@ label[for="agree_privacy"] {
 .contact_form_button_wrap {
     display: grid;
     place-content: center;
-    margin-top: 60px;
+    margin-top: 45px;
 }
 
 .contact_form_button {
@@ -337,4 +337,18 @@ label[for="agree_privacy"] {
     .contact_form_button {
         width: 100%;
     }
+}
+
+/* contactform7 */
+form.wpcf7-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.wpcf7-submit:not(.contact_form_button) {
+	display: none;
+}
+/* エラーメッセージの上部を消去 */
+div.screen-reader-response{
+    display: none;
 }
