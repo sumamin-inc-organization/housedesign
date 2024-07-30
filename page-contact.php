@@ -4,15 +4,15 @@ Template Name: contact
 */
 ?>
 <?php get_header(); ?>
-<!-- <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/css/page.contact.css"> -->
+<?php get_template_part('header_nav'); ?>
 <main>
     <section class="contact">
         <div class="contact_wrap">
         <div class="contact_grid">
             <div class="contact_text">
                 <div class="contact_text_upper">
-                    <p class="page_subtitle contact_subtitle">CONTACT</p>
-                    <h1 class="page_title contact_title">お問い合わせ</h1>
+                    <p class="page_subtitle contact_subtitle fadein_up">CONTACT</p>
+                    <h1 class="page_title contact_title fadein_up fadein_up_second">お問い合わせ</h1>
                 </div>
                 <div class="contact_text_bottom">
                     <p class="contact_description">雨漏りや外壁工事、ベランダの修復など<br class="for-sp">お住まいに関するあらゆることに<br class="for-sp">対応いたします。<br class="for-sp">
@@ -24,7 +24,8 @@ Template Name: contact
                     <div class="contact_form_description">
                         <p>以下のフォームに必要事項をご記入の上、送信ボタンを押してください。<br><span class="required">*</span>は必須項目です。</p>
                     </div>
-                    <div class="horizontal_group">
+                    <?php echo do_shortcode('[contact-form-7 id="36c05ed" title="お問合せフォーム"]') ?>
+                    <!-- <div class="horizontal_group">
                         <div class="form_group">
                             <label for="name">お名前<span class="required space">*</span></label>
                             <input type="text" id="name" name="name" required placeholder="山田 太郎">
@@ -120,7 +121,7 @@ Template Name: contact
                                 </g>
                             </svg>
                         </button>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
