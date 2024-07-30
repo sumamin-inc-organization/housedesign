@@ -43,3 +43,13 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', checkFadeIn);
     checkFadeIn();
 });
+
+// fade in header
+window.addEventListener('scroll', function() {
+    const headerFixed = document.querySelector('.header_fixed');
+    if (window.scrollY >= 800) {
+        headerFixed.classList.add('show');
+    } else {
+        headerFixed.classList.remove('show');
+    }
+});

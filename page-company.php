@@ -16,8 +16,8 @@
             </div>
             <div class="works_kv_right">
                 <picture>
-                    <source srcset="assets/images/company/sp/kv.png" media="(max-width: 767px)" />
-                    <img src="assets/images/company/kv.png">
+                    <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/company/sp/kv.png" media="(max-width: 767px)" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/company/kv.png">
                 </picture>
                 <div class="kv_deco"></div>
             </div>
