@@ -951,7 +951,7 @@ footer{
 /* --------------------
     flow text
 -------------------- */
-.flow_text {
+.flow_deco {
     overflow: hidden;
     display: flex;
     width: 100vw;
@@ -960,7 +960,7 @@ footer{
     top: -190px;
 }
 
-.flow_text_item {
+.flow_deco_item {
     flex-shrink: 0;
     white-space: nowrap;
     font-family: "Roboto", sans-serif;;
@@ -971,11 +971,11 @@ footer{
     padding-right: 60px;
 }
 
-.flow_text_item:nth-child(odd) {
+.flow_deco_item:nth-child(odd) {
     animation: MoveLeft 24s -12s infinite linear;
 }
 
-.flow_text_item:nth-child(even) {
+.flow_deco_item:nth-child(even) {
     animation: MoveLeft2 24s infinite linear;
 }
 
@@ -1007,21 +1007,21 @@ footer{
 }
 
 @media (max-width: 1024px) {
-    .flow_text{
+    .flow_deco{
         top: -112px;
     }
     
-    .flow_text_item{
+    .flow_deco_item{
         font-size: 200px;
     }
 }
 
 @media (max-width: 767px) {
-    .flow_text {
+    .flow_deco {
         top: -85px;
     }
 
-    .flow_text_item{
+    .flow_deco_item{
         font-size: 150px;
     }
 }

@@ -1,34 +1,46 @@
 // hamburger
 jQuery(document).ready(function($) {
-    $('.header_top #js-hamburger-menu, .header_fixed #js-hamburger-menu, .navigation__link').on('click', function () {
+    var isAnimating = false;
+
+    $('.header_top #js-hamburger-menu, .header_fixed #js-hamburger-menu, .header_under #js-hamburger-menu, .navigation__link').on('click', function () {
         var header = $(this).closest('header');
+        if (isAnimating) return;
         if (header.find('.navigation').hasClass('is-open')) {
             closeNavigation(header);
         } else {
             openNavigation(header);
         }
     });
+
     $(document).on('click', function (event) {
         var target = $(event.target);
-        if (!target.closest('.navigation').length && $('.navigation').hasClass('is-open')) {
-            closeNavigation();
+        if (!target.closest('.navigation').length && $('.navigation').hasClass('is-open') && !isAnimating) {
+            closeNavigation($('.navigation').closest('header'));
         }
     });
+
     function openNavigation(header) {
+        isAnimating = true;
         header.find('.navigation').css('right', '-100%').css('display', 'block').animate({ right: '0' }, 500, function () {
             $(this).addClass('is-open');
             if (header.hasClass('header_top')) {
                 $('body').addClass('no-scroll'); // header_topの場合、スクロールを無効にする
             }
+            isAnimating = false;
         });
         header.find('.hamburger-menu').addClass('hamburger-menu--open');
     }
-    function closeNavigation() {
-        $('.navigation').animate({ right: '-100%' }, 500, function () {
+
+    function closeNavigation(header) {
+        isAnimating = true;
+        header.find('.navigation').animate({ right: '-100%' }, 500, function () {
             $(this).removeClass('is-open').css('display', 'none');
-            $('body').removeClass('no-scroll'); // スクロールを有効に戻す
+            if (header.hasClass('header_top')) {
+                $('body').removeClass('no-scroll'); // スクロールを有効に戻す
+            }
+            isAnimating = false;
         });
-        $('.hamburger-menu').removeClass('hamburger-menu--open');
+        header.find('.hamburger-menu').removeClass('hamburger-menu--open');
     }
 });
 

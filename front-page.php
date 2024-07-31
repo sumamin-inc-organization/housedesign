@@ -18,9 +18,9 @@
     </section>
 
     <section class="about">
-        <div class="flow_text">
-            <p class="flow_text_item">HOUSEDESIGN</p>
-            <p class="flow_text_item">HOUSEDESIGN</p>
+        <div class="flow_deco">
+            <p class="flow_deco_item">HOUSEDESIGN</p>
+            <p class="flow_deco_item">HOUSEDESIGN</p>
         </div>
         <div class="wrapper">
             <div class="about_content">
@@ -90,7 +90,7 @@
                 <div class="service_item">
                     <h3>ベランダ修復</h3>
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/service3.jpg">
-                    <p>雨風にさらされているベランダ。<br>気づいたらお早めにご相談下さい。</p>
+                    <p>雨風にさらされているベランダ｡<br>気づいたらお早めにご相談下さい｡</p>
                     <a href="<?= get_permalink(get_page_by_path('balcony')) ?>" class="top_btn">詳しくはこちら<span class="btn_arrow"></span></a>
                 </div>
             </div>

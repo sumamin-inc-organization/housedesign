@@ -68,7 +68,7 @@ body{
     width: 300px;
 }
 
-.flow_text_item {
+.flow_deco_item {
     color: #ffffff50;
 
 }
@@ -429,7 +429,6 @@ body{
 
 .column_content{
     display: flex;
-    flex-wrap: wrap;
     gap: 60px;
     margin: 80px 0;
 }
@@ -498,12 +497,20 @@ body{
         font-size: 14px;
     }
 
+    .works {
+        padding: 0 0 140px;
+    }
+
     .works_content{
         flex-flow: column-reverse;
     }
 
+    .works_ba {
+        height: 30vh;
+    }
+
     .column_content{
-        gap: 40px;
+        gap: 20px;
     }
 
     .column_item{
@@ -581,10 +588,6 @@ body{
         margin: auto;
     }
 
-    .works_ba {
-        height: 30vh;
-    }
-
     .column .secTitleEn,
     .column .secTitle{
         color: #fff;
@@ -595,6 +598,7 @@ body{
     }
 
     .column_content{
+        flex-flow: column;
         margin: 60px 0;
         gap: 20px;
     }

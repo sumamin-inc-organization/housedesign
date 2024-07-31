@@ -132,14 +132,6 @@
 }
 
 @media (max-width: 1024px) {
-    .flow_text{
-        top: -112px;
-    }
-    
-    .flow_text_item{
-        font-size: 200px;
-    }
-
     .message_inner {
         width: 60vw;
     }
@@ -177,14 +169,6 @@
     .kv_deco {
         width: 20vw;
         clip-path: polygon(75% 0%, 90% 0%, 35% 100%, 20% 100%);
-    }
-
-    .flow_text {
-        top: -85px;
-    }
-
-    .flow_text_item{
-        font-size: 150px;
     }
 
     .message {
