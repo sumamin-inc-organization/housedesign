@@ -345,10 +345,18 @@ form.wpcf7-form {
     flex-direction: column;
     gap: 15px;
 }
-.wpcf7-submit:not(.contact_form_button) {
+#wpcf7-f230-o1 .wpcf7-submit:not(.contact_form_button) {
 	display: none;
+}
+
+#wpcf7-f230-o1 .wpcf7-list-item {
+	margin: 0;
 }
 /* エラーメッセージの上部を消去 */
 div.screen-reader-response{
+    display: none;
+}
+
+.privacy_policy::-webkit-scrollbar{
     display: none;
 }
