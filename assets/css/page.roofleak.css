@@ -50,12 +50,6 @@
     margin-bottom: 60px;
 }
 
-.section_text{
-    margin-top: 50px;
-    font-weight: 700;
-    letter-spacing: 0.8px;
-}
-
 /* check --------------------------------------------------------------------------- */
 
 .check {
@@ -230,10 +224,6 @@
 }
 
 @media (max-width: 767px) {
-    .section_text{
-        text-align: left;
-    }
-
     .works_kv{
         grid-template-columns: 1fr 90% 1fr;
         gap: 40px 0;
