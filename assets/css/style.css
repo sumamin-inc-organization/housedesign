@@ -81,6 +81,12 @@ body {
     letter-spacing: 0.05rem;
 }
 
+.section_text{ /* セクションタイトル下テキスト */
+    margin-top: 50px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+
 .secTitleEn{ /* 英語タイトル */
     color: var(--colorBlue);
     font-size: 14px;
@@ -104,6 +110,12 @@ body {
     font-weight: 500;
     line-height: 1.9;
     letter-spacing: 0.05rem;
+}
+
+@media (max-width: 767px) {
+    .section_text{
+        text-align: left;
+    }
 }
 
 /* --------------------
@@ -281,6 +293,10 @@ header .current{
     display: none;
 }
 
+.no-scroll {
+    overflow: hidden;
+}
+
 @media (max-width: 1200px) {
     .hamburger-menu {
         display: block;
@@ -350,15 +366,19 @@ header .current{
 
     .navigation__list {
         width: 80%;
-        margin: 10vh auto 0;
+        margin: 5vh auto 0;
         display: flex;
         flex-flow: column;
         gap: 15px;
-        height: 100vh;
-        overflow: scroll;
+    }
+
+    .header_top .navigation__list {
+        height: 85vh;
+        overflow-y: scroll;
     }
 
     .navigation__list-item {
+        color: var(--colorBlue);
         font-size: 18px;
         font-weight: 700;
         letter-spacing: .01em;
@@ -398,6 +418,7 @@ header .current{
     }
 
     .hamburger_tel{
+        color: var(--colorBlue);
         display: flex;
         flex-flow: column;
         align-items: center;
@@ -924,5 +945,83 @@ footer{
     .footer_right{
         flex-direction: column;
         row-gap: 50px;
+    }
+}
+
+/* --------------------
+    flow text
+-------------------- */
+.flow_deco {
+    overflow: hidden;
+    display: flex;
+    width: 100vw;
+    margin-inline: calc(50% - 50vw);
+    position: absolute;
+    top: -190px;
+}
+
+.flow_deco_item {
+    flex-shrink: 0;
+    white-space: nowrap;
+    font-family: "Roboto", sans-serif;;
+    font-size: 335px;
+    font-weight: 700;
+    letter-spacing: .025em;
+    color: var(--colorBlueLight);
+    padding-right: 60px;
+}
+
+.flow_deco_item:nth-child(odd) {
+    animation: MoveLeft 24s -12s infinite linear;
+}
+
+.flow_deco_item:nth-child(even) {
+    animation: MoveLeft2 24s infinite linear;
+}
+
+@keyframes flow {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes MoveLeft {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes MoveLeft2 {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-200%);
+    }
+}
+
+@media (max-width: 1024px) {
+    .flow_deco{
+        top: -112px;
+    }
+    
+    .flow_deco_item{
+        font-size: 200px;
+    }
+}
+
+@media (max-width: 767px) {
+    .flow_deco {
+        top: -85px;
+    }
+
+    .flow_deco_item{
+        font-size: 150px;
     }
 }

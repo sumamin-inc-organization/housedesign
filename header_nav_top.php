@@ -45,7 +45,7 @@
                 <li class="navigation__list-item"><a href="<?= get_permalink(get_page_by_path('company')) ?>" class="navigation__link">会社概要</a></li>
                 <div class="hamburger_tel">
                     <a class="header_tel_number" href="tel:0467-84-7404">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/phone.svg">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/phone.svg">
                         <span>0467-84-7404</span>
                     </a>
                     <p class="header_tel_open">9:00〜18:00<span>(日・祝除く)</span></p>
