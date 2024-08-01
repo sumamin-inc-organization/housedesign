@@ -50,7 +50,7 @@ body{
 
 .kv_movie_sp{
     width: 100vw;
-    height: 90vh;
+    height: 100dvh;
     object-fit: cover;
 }
 
@@ -157,7 +157,8 @@ body{
     margin-left: auto;
     transition: 0.3s;
     cursor: pointer;
-    padding-left: 10px;
+    position: relative;
+    padding-right: 15px;
 }
 
 .btn_arrow{
@@ -166,7 +167,8 @@ body{
     width: 20px;
     border-radius: 50%;
     border: solid 1px #fff;
-    position: relative;
+    position: absolute;
+    right: 20px;
     margin-left: 10px;
     transition: 0.3s;
 }
@@ -263,7 +265,7 @@ body{
 .service_item h3{
     font-size: 28px;
     font-weight: 700;
-    letter-spacing: .02em;
+    letter-spacing: 2.8px;
 }
 
 .service_item p{
@@ -287,11 +289,24 @@ body{
     gap: 60px;
 }
 
+.works_inner{
+    flex: 1;
+}
+
 .works_ba {
     position: relative;
     overflow: hidden;
-    flex: 1;
     margin: 0 auto;
+    aspect-ratio: 76 / 50;
+    object-fit: cover;
+}
+
+.works_annotation{
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: right;
+    margin-top: 20px;
 }
 
 .box_before {
@@ -383,6 +398,11 @@ body{
 
 .column .section_title{
     text-align: center;
+}
+
+.column .secTitleEn,
+.column .secTitle{
+    color: #fff;
 }
 
 .column_content{
@@ -506,7 +526,7 @@ body{
     }
 
     .works_ba {
-        height: 30vh;
+        height: auto;
     }
 
     .column_content{
@@ -586,11 +606,6 @@ body{
     .works .top_btn.for-sp{
         display: flex;
         margin: auto;
-    }
-
-    .column .secTitleEn,
-    .column .secTitle{
-        color: #fff;
     }
 
     .column {
