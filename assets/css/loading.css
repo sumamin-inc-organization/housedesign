@@ -28,7 +28,7 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -65%);
+    transform: translate(-50%, -50%);
     display: none;
     z-index: 999999;
     width: max(180px, 19.84vw);
