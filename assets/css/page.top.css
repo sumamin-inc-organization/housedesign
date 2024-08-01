@@ -270,7 +270,6 @@ body{
 
 .service_item p{
     font-weight: 700;
-    flex-grow: 1;
 }
 
 .service_item .top_btn{

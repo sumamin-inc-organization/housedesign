@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Roboto:wght@400;500;700;900&display=swap');
+
 /* --------------------
     基本設定
 -------------------- */
@@ -21,6 +23,30 @@ body {
     background-color: var(--colorBlueLight);
     color: var(--colorBlack);
     font-family: "Noto Sans JP", sans-serif;
+    letter-spacing: .05em;
+    line-height: 1.87;
+}
+
+.wrapper{
+    max-width: 1200px;
+    margin: auto;
+}
+
+@media (max-width: 1300px) {
+    .wrapper
+    {
+        max-width: 90%;
+    }
+}
+
+.under_page_main{
+    padding-top: 115px;
+}
+
+@media (max-width: 767px) {
+    .under_page_main{
+        padding-top: 85px;
+    }
 }
 
 .for-sp {
@@ -67,6 +93,7 @@ body {
     font-weight: bold;
     line-height: 1;
     letter-spacing: 0.05rem;
+    padding-bottom: 10px;
 }
 
 .paragraph700{ /* ボールドテキスト */
