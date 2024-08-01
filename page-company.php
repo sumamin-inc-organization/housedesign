@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php get_header();?>
 
 <?php get_template_part('header_nav'); ?>
@@ -134,5 +133,3 @@
 </main>
 
 <?php get_footer(); ?>
-=======
->>>>>>> 3e10dc215e99b0c53cfea9ca2d2714c74127f0a8
