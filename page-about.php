@@ -51,14 +51,14 @@
                     <div class="reasons_text">
                         <p class="secTitleEn">POINT.01</p>
                         <h3 class="secTitle">迅速丁寧</h3>
-                        <p class="reasons_detail">お客様にご満足いただける仕事を！<br>なんでも当社にお任せください。迅速に対応いたします。</p>
+                        <p class="reasons_detail">お客様にご満足いただける仕事を！<br class="for-pc">なんでも当社にお任せください。迅速に対応いたします。</p>
                     </div>
                 </div>
                 <div class="reasons_item">
                     <div class="reasons_text">
                         <p class="secTitleEn">POINT.02</p>
                         <h3 class="secTitle">自社施工</h3>
-                        <p class="reasons_detail">規模の大小は問いません。<br>ご相談からアフターサービスまで、親身に対応いたします。</p>
+                        <p class="reasons_detail">規模の大小は問いません。<br class="for-pc">ご相談からアフターサービスまで、親身に対応いたします。</p>
                     </div>
                     <div class="reasons_img">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about/reasons2.jpg">
@@ -71,7 +71,7 @@
                     <div class="reasons_text">
                         <p class="secTitleEn">POINT.03</p>
                         <h3 class="secTitle">地域密着の対応</h3>
-                        <p class="reasons_detail">地震などの自然の脅威からもご家族を守る、強く安心の住まいでなくてはなりません。<br>安心・安全な住まいを、あなたの身近に。</p>
+                        <p class="reasons_detail">地震などの自然の脅威からもご家族を守る、強く安心の住まいでなくてはなりません。<br class="for-pc">安心・安全な住まいを、あなたの身近に。</p>
                     </div>
                 </div>
             </div>

@@ -3,7 +3,7 @@
         <ul class="header_nav">
             <li <?= is_home() ? ' class="current"' : '' ?>><a href="<?= home_url() ?>" class="header_link">HOME</a></li>
             <li <?= is_page('about') ? ' class="current"' : '' ?>><a href="<?= get_permalink(get_page_by_path('about')) ?>" class="header_link">私たちについて</a></li>
-            <li <?= (is_page('roofleak') || is_page('wall') || is_page('balcony')) ? ' class="current"' : '' ?> class="header_link">事業内容
+            <li <?= (is_page('roofleak') || is_page('wall') || is_page('balcony')) ? ' class="current"' : '' ?> class="header_link">事業内容<div class="header_arrow"></div>
                 <ul class="sub-menu">
                     <li><a href="<?= get_permalink(get_page_by_path('roofleak')) ?>" class="header_link">雨漏り</a></li>
                     <li><a href="<?= get_permalink(get_page_by_path('wall')) ?>" class="header_link">外壁工事</a></li>
@@ -45,7 +45,7 @@
                 <li class="navigation__list-item"><a href="<?= get_permalink(get_page_by_path('company')) ?>" class="navigation__link">会社概要</a></li>
                 <div class="hamburger_tel">
                     <a class="header_tel_number" href="tel:0467-84-7404">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/phone.svg">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/phone.svg">
                         <span>0467-84-7404</span>
                     </a>
                     <p class="header_tel_open">9:00〜18:00<span>(日・祝除く)</span></p>
@@ -63,7 +63,7 @@
         <ul class="header_nav">
             <li <?= is_home() ? ' class="current"' : '' ?>><a href="<?= home_url() ?>" class="header_link">HOME</a></li>
             <li <?= is_page('about') ? ' class="current"' : '' ?>><a href="<?= get_permalink(get_page_by_path('about')) ?>" class="header_link">私たちについて</a></li>
-            <li <?= (is_page('roofleak') || is_page('wall') || is_page('balcony')) ? ' class="current"' : '' ?> class="header_link">事業内容
+            <li <?= (is_page('roofleak') || is_page('wall') || is_page('balcony')) ? ' class="current"' : '' ?> class="header_link">事業内容<div class="header_arrow"></div>
                 <ul class="sub-menu">
                     <li><a href="<?= get_permalink(get_page_by_path('roofleak')) ?>" class="header_link">雨漏り</a></li>
                     <li><a href="<?= get_permalink(get_page_by_path('wall')) ?>" class="header_link">外壁工事</a></li>

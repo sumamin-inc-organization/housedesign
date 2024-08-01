@@ -39,34 +39,6 @@
     clip-path: polygon(45% 0%, 60% 0%, 15% 100%, 0% 100%);
 }
 
-.flow_text {
-    overflow: hidden;
-    display: flex;
-    width: 100vw;
-    margin-inline: calc(50% - 50vw);
-    position: absolute;
-    top: -190px;
-}
-
-.flow_text_item {
-    flex-shrink: 0;
-    white-space: nowrap;
-    font-family: "Roboto", sans-serif;;
-    font-size: 335px;
-    font-weight: 700;
-    letter-spacing: .025em;
-    color: var(--colorBlueLight);
-    padding-right: 60px;
-}
-
-.flow_text_item:nth-child(odd) {
-    animation: MoveLeft 24s -12s infinite linear;
-}
-
-.flow_text_item:nth-child(even) {
-    animation: MoveLeft2 24s infinite linear;
-}
-
 .company{
     padding: 140px 0;
     background: transparent linear-gradient(180deg, #DCE6F0 0%, #508CA5 100%) 0% 0% no-repeat padding-box;
@@ -104,34 +76,6 @@
 
 .company_text{
     font-weight: 500;
-}
-
-
-@keyframes flow {
-    0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
-@keyframes MoveLeft {
-    from {
-        transform: translateX(100%);
-    }
-    to {
-        transform: translateX(-100%);
-    }
-}
-
-@keyframes MoveLeft2 {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-200%);
-    }
 }
 
 .message{
@@ -188,14 +132,6 @@
 }
 
 @media (max-width: 1024px) {
-    .flow_text{
-        top: -112px;
-    }
-    
-    .flow_text_item{
-        font-size: 200px;
-    }
-
     .message_inner {
         width: 60vw;
     }
@@ -233,14 +169,6 @@
     .kv_deco {
         width: 20vw;
         clip-path: polygon(75% 0%, 90% 0%, 35% 100%, 20% 100%);
-    }
-
-    .flow_text {
-        top: -85px;
-    }
-
-    .flow_text_item{
-        font-size: 150px;
     }
 
     .message {
