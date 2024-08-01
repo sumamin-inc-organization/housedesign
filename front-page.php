@@ -1,7 +1,7 @@
 <?php get_header();?>
 
 <?php get_template_part('header_nav_top'); ?>
-
+<?php get_template_part('loading'); ?>
 <main>
     <section class="kv">
         <div class="kv_content">

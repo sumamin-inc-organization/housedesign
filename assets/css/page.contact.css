@@ -360,3 +360,11 @@ div.screen-reader-response{
 .privacy_policy::-webkit-scrollbar{
     display: none;
 }
+
+.wpcf7 form .wpcf7-response-output,
+.wpcf7 form.sent .wpcf7-response-output,
+.wpcf7 form.invalid .wpcf7-response-output,
+.wpcf7 form.unaccepted .wpcf7-response-output,
+.wpcf7 form.payment-required .wpcf7-response-output {
+    border: none;
+}
