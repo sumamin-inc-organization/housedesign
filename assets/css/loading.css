@@ -31,7 +31,7 @@
     transform: translate(-50%, -65%);
     display: none;
     z-index: 999999;
-    width: max(180px, 25vw);
+    width: max(180px, 19.84vw);
 	display:none;
 }
 
