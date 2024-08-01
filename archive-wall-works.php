@@ -1,3 +1,9 @@
+<?php
+/*
+Template Name: works_wall
+*/
+?>
+
 <?php get_header(); ?>
 
 <?php get_template_part('header_nav'); ?>
@@ -13,9 +19,9 @@
                 <p class="category_label">カテゴリー</p>
                 <div class="category_flex">
                     <p class="category_label_sp">カテゴリー</p>
-                    <a href="<?= get_post_type_archive_link('works') ?>" class="category_btn category_active" data-category="all">すべて</a>
+                    <a href="<?= get_post_type_archive_link('works') ?>" class="category_btn" data-category="all">すべて</a>
                     <a href="<?= get_permalink(get_page_by_path('works_roofleak')) ?>" class="category_btn" data-category="roofleak">雨漏り</a>
-                    <a href="<?= get_permalink(get_page_by_path('works_wall')) ?>" class="category_btn" data-category="wall">外壁工事</a>
+                    <a href="<?= get_permalink(get_page_by_path('works_wall')) ?>" class="category_btn category_active" data-category="wall">外壁工事</a>
                     <a href="<?= get_permalink(get_page_by_path('works_balcony')) ?>" class="category_btn" data-category="balcony">ベランダ修復</a>
                 </div>
             </div>
@@ -23,22 +29,29 @@
                 <?php
                 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                 $args = array(
-                    'post_type'      => 'column',     // ニュース投稿タイプ
-                    'posts_per_page' => 12,          // 表示件数
-                    'post_status'    => 'publish',  // 公開済みのみ
-                    'orderby'        => 'date',     // 投稿日時で並び替え
-                    'order'          => 'DESC',     // 新着順
-                    'paged'          => $paged,     // 現在のページ数
+                    'post_type'      => 'column',
+                    'posts_per_page' => 12,
+                    'post_status'    => 'publish',
+                    'orderby'        => 'date',
+                    'order'          => 'DESC',
+                    'paged'          => $paged,
+                    'tax_query'      => array(
+                        array(
+                            'taxonomy' => 'column-cat',
+                            'field'    => 'slug',
+                            'terms'    => 'wall',
+                        ),
+                    ),
                 );
-                $column_query = new WP_Query($args);
+                $wall_query = new WP_Query($args);
 
-                if ($column_query->have_posts()) :
-                    while ($column_query->have_posts()) :
-                        $column_query->the_post();
-                        $terms = get_the_terms( get_the_ID(), 'column-cat' ); // 'column-cat' はカスタムタクソノミーの名前
+                if ($wall_query->have_posts()) :
+                    while ($wall_query->have_posts()) :
+                        $wall_query->the_post();
+                        $terms = get_the_terms(get_the_ID(), 'column-cat');
                         $term_slugs = array();
-                        if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
-                            foreach ( $terms as $term ) {
+                        if (!empty($terms) && !is_wp_error($terms)) {
+                            foreach ($terms as $term) {
                                 $term_slugs[] = $term->slug;
                             }
                         }
@@ -46,40 +59,38 @@
                 <a class="column_item" href="<?php the_permalink(); ?>" data-category="<?php echo esc_attr(implode(' ', $term_slugs)); ?>">
                     <div class="column_img">
                         <?php
-                        if ( has_post_thumbnail() ) {
-                            the_post_thumbnail( 'full' );
+                        if (has_post_thumbnail()) {
+                            the_post_thumbnail('full');
                         }
                         ?>
                     </div>
                     <div class="column_text">
                         <div class="column_text_top">
-                            <!-- 投稿日 -->
                             <p class="column_date"><?php echo get_the_date('Y.m.d'); ?></p>
-                            <!-- カテゴリー -->
                             <p class="column_category">
                                 <?php
-                                if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+                                if (!empty($terms) && !is_wp_error($terms)) {
                                     $term_names = array();
-                                    foreach ( $terms as $term ) {
+                                    foreach ($terms as $term) {
                                         $term_names[] = $term->name;
                                     }
-                                    echo implode( ', ', $term_names );
+                                    echo esc_html(implode(', ', $term_names));
                                 } else {
                                     echo 'カテゴリーがありません';
                                 }
                                 ?>
                             </p>
                         </div>
-                        <!-- タイトル -->
                         <p class="column_title"><?php the_title(); ?></p>
                     </div>
                 </a>
                 <?php
                     endwhile;
-                    wp_reset_postdata();
                 else :
-                    echo 'ニュースが見つかりませんでした。';
+                    echo '<p>投稿が見つかりませんでした。</p>';
                 endif;
+
+                wp_reset_postdata();
                 ?>
             </div>
 
@@ -87,9 +98,11 @@
             // ページネーションを表示
             echo '<div class="pagination">';
             echo paginate_links(array(
-                'total'   => $column_query->max_num_pages,
+                'total'   => $wall_query->max_num_pages,
                 'prev_text' => '&laquo;',
                 'next_text' => '&raquo;',
+                'add_args'  => false,
+                'type'      => 'list', // ページネーションのスタイルをリストに変更
             ));
             echo '</div>';
             ?>
@@ -106,7 +119,6 @@
             </script>
 
         </div>
-        
     </section>
 
 </main>
