@@ -14,7 +14,7 @@
                 お使いのブラウザは動画タグをサポートしていません。
             </video>
         </div>
-        <img class="kv_logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/common/logo_wh.svg">
+        <!-- <img class="kv_logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/common/logo_wh.svg"> -->
     </section>
 
     <section class="about">
@@ -208,5 +208,4 @@
 
 </main>
 
-</main>
 <?php get_footer(); ?>

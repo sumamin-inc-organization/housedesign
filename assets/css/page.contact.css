@@ -206,6 +206,9 @@ textarea[name="details"] {
 label[for="agree_privacy"] {
     font-weight: 500;
 }
+#agree_privacy .wpcf7-list-item-label {
+    font-weight: 500;
+}
 
 .contact_form_button_wrap {
     display: grid;

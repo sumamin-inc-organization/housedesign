@@ -1,4 +1,5 @@
 <header class="header_top">
+<h1 class="header_logo"><a href="<?= home_url() ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/logo.svg" alt="logo"></a></h1>
     <div class="header_menu">
         <ul class="header_nav">
             <li <?= is_home() ? ' class="current"' : '' ?>><a href="<?= home_url() ?>" class="header_link">HOME</a></li>
@@ -58,7 +59,7 @@
     </div>
 </header>
 <header class="header_fixed">
-    <h1 class="header_logo"><a href="<?= home_url() ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/logo.svg" alt="TONAMI"></a></h1>
+    <h1 class="header_logo"><a href="<?= home_url() ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/logo.svg" alt="logo"></a></h1>
     <div class="header_menu">
         <ul class="header_nav">
             <li <?= is_home() ? ' class="current"' : '' ?>><a href="<?= home_url() ?>" class="header_link">HOME</a></li>
