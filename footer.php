@@ -58,7 +58,7 @@
         
                 <ul>
                     <li><a href="<?= get_post_type_archive_link('works') ?>">施工事例</a></li>
-                    <li><a href="<?= get_post_type_archive_link('column') ?>">コラムコラム</a></li>
+                    <li><a href="<?= get_post_type_archive_link('column') ?>">コラム</a></li>
                     <li><a href="<?= get_permalink(get_page_by_path('company')) ?>">会社概要</a></li>
                     <li><a href="<?= get_permalink(get_page_by_path('contact')) ?>">お問い合わせ</a></li>
                 </ul>
