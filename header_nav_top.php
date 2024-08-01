@@ -3,7 +3,7 @@
         <ul class="header_nav">
             <li <?= is_home() ? ' class="current"' : '' ?>><a href="<?= home_url() ?>" class="header_link">HOME</a></li>
             <li <?= is_page('about') ? ' class="current"' : '' ?>><a href="<?= get_permalink(get_page_by_path('about')) ?>" class="header_link">私たちについて</a></li>
-            <li <?= (is_page('roofleak') || is_page('wall') || is_page('balcony')) ? ' class="current"' : '' ?> class="header_link">事業内容
+            <li <?= (is_page('roofleak') || is_page('wall') || is_page('balcony')) ? ' class="current"' : '' ?> class="header_link">事業内容<div class="header_arrow"></div>
                 <ul class="sub-menu">
                     <li><a href="<?= get_permalink(get_page_by_path('roofleak')) ?>" class="header_link">雨漏り</a></li>
                     <li><a href="<?= get_permalink(get_page_by_path('wall')) ?>" class="header_link">外壁工事</a></li>
@@ -63,7 +63,7 @@
         <ul class="header_nav">
             <li <?= is_home() ? ' class="current"' : '' ?>><a href="<?= home_url() ?>" class="header_link">HOME</a></li>
             <li <?= is_page('about') ? ' class="current"' : '' ?>><a href="<?= get_permalink(get_page_by_path('about')) ?>" class="header_link">私たちについて</a></li>
-            <li <?= (is_page('roofleak') || is_page('wall') || is_page('balcony')) ? ' class="current"' : '' ?> class="header_link">事業内容
+            <li <?= (is_page('roofleak') || is_page('wall') || is_page('balcony')) ? ' class="current"' : '' ?> class="header_link">事業内容<div class="header_arrow"></div>
                 <ul class="sub-menu">
                     <li><a href="<?= get_permalink(get_page_by_path('roofleak')) ?>" class="header_link">雨漏り</a></li>
                     <li><a href="<?= get_permalink(get_page_by_path('wall')) ?>" class="header_link">外壁工事</a></li>

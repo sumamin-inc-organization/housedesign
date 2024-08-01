@@ -177,6 +177,7 @@ header{
 
 .header_nav li {
     position: relative;
+    cursor: pointer;
 }
 
 .header_nav li .sub-menu {
@@ -214,6 +215,25 @@ header .current{
     top: 3px;
     border-bottom: solid 2px  var(--colorBlue);
     padding-bottom: 4px;
+}
+
+.header_arrow{
+    display: inline-block;
+    vertical-align: middle;
+    color: var(--colorBlue);
+    line-height: 1;
+    width: 8px;
+    height: 8px;
+    border: 2px solid currentColor;
+    border-left: 0;
+    border-bottom: 0;
+    box-sizing: border-box;
+    transform: translateY(-25%) rotate(135deg);
+    margin-left: 10px;
+}
+
+.header_top .header_arrow{
+    color: #fff;
 }
 
 .header_btn{
@@ -373,7 +393,7 @@ header .current{
     }
 
     .header_top .navigation__list {
-        height: 85vh;
+        height: 100dvh;
         overflow-y: scroll;
     }
 
