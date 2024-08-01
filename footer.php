@@ -25,7 +25,7 @@
 <footer>
     <div class="footer_wrapper">
         <div class="footer_left">
-            <img class="footer_logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/common/logo_wh.svg" alt="株式会社House Design">
+            <a href="<?= home_url() ?>"><img class="footer_logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/common/logo_wh.svg" alt="株式会社House Design"></a>
         
             <p class="footer_text">Office：〒253-0072 <br class="for-sp">神奈川県茅ヶ崎市今宿965-1-E-1503<br>
             リステージ茅ヶ崎ツインマークスF15<br>
@@ -49,18 +49,18 @@
         
             <div class="footer_link">
                 <ul>
-                    <li>私達について</li>
+                    <li><a href="<?= get_permalink(get_page_by_path('about')) ?>">私たちについて</a></li>
                     <li>事業内容</li>
-                    <li class="link_lower">雨漏り対応</li>
-                    <li class="link_lower">外壁工事</li>
-                    <li class="link_lower">ベランダ修復</li>
+                    <li class="link_lower"><a href="<?= get_permalink(get_page_by_path('roofleak')) ?>">雨漏り対応</a></li>
+                    <li class="link_lower"><a href="<?= get_permalink(get_page_by_path('wall')) ?>">外壁工事</a></li>
+                    <li class="link_lower"><a href="<?= get_permalink(get_page_by_path('balcony')) ?>">ベランダ修復</a></li>
                 </ul>
         
                 <ul>
-                    <li>施工事例</li>
-                    <li>コラム</li>
-                    <li>会社概要</li>
-                    <li>お問い合わせ</li>
+                    <li><a href="<?= get_post_type_archive_link('works') ?>">施工事例</a></li>
+                    <li><a href="<?= get_post_type_archive_link('column') ?>">コラム</a></li>
+                    <li><a href="<?= get_permalink(get_page_by_path('company')) ?>">会社概要</a></li>
+                    <li><a href="<?= get_permalink(get_page_by_path('contact')) ?>">お問い合わせ</a></li>
                 </ul>
             </div>
         </div>

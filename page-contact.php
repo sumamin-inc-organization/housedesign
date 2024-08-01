@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 /*
 Template Name: contact
@@ -149,3 +150,5 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 <?php get_footer(); ?>
+=======
+>>>>>>> 3e10dc215e99b0c53cfea9ca2d2714c74127f0a8

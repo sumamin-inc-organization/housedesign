@@ -35,4 +35,3 @@
 :where(table) {border-collapse: collapse;}
 :where(th, td) {padding: 0;border: 0;}
 :where(a) {text-decoration: none;}
-:where(ul,li) {list-style: none;}
