@@ -595,11 +595,13 @@ header .current{
     color: #fff;
     font-size: 28px;
     font-weight: 700;
+    line-height: 1;
 }
 
 .form_title h4 .yellow{
     color: #FFE554;
     font-size: 40px;
+    line-height: 1;
     margin-right: 0.1em;
 }
 
@@ -610,8 +612,9 @@ header .current{
     display: block;
     font-size: 24px;
     font-weight: 700;
-    margin-top: 10px;
-    padding: 0.3em 1.3em;
+    line-height: 1;
+    margin-top: 15px;
+    padding: 0.5em 1.1em;
     text-align: center;
 }
 
@@ -623,13 +626,14 @@ header .current{
     display: grid;
     grid-template-columns: 35% 65%;
     align-items: center;
-}
-
-.form_row:not(:first-child) p{
     margin-top: 20px;
 }
 
-.form_row:not(:last-of-type) p{
+.form_row.name p{
+    margin-top: 0;
+}
+
+.form_row.consultation p{
     align-items: flex-start;
 }
 
@@ -639,11 +643,13 @@ header .current{
     font-size: 24px;
     font-weight: 700;
     letter-spacing: 0.03rem;
-    padding-left: 5px;
+    line-height: 1;
+    /* padding-left: 5px; */
 }
 
 .form_row .checkbox label{
     font-size: 20px;
+    padding-left: 5px;
     position: relative;
 }
 
@@ -656,10 +662,13 @@ header .current{
     border-radius: 5px;
     height: 50px;
     padding: 0.5em 1em;
-    /* font-family: 'Noto Sans JP', sans-serif; */
     color: var(--colorBlack);
     font-size: 20px;
     font-weight: 700;
+}
+
+.kome{
+    color: var(--colorRed);
 }
 
 .form_row .checkbox .wpcf7-list-item{
@@ -700,7 +709,7 @@ header .current{
 }
 
 .footer_send{
-    margin-top: 40px;
+    margin-top: 30px;
     display: flex;
     justify-content: center;
 }
@@ -710,7 +719,7 @@ header .current{
     position: relative;
 }
 
-.footer_send input[type="submit"]{
+.footer_send p input[type="submit"]{
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -730,7 +739,7 @@ header .current{
     transition-duration: 0.3s;
 }
 
-.footer_send input[type="submit"]:hover{
+.footer_send p:hover input[type="submit"]{
     background-color: var(--colorWhiteBg);
     color: var(--colorRed);
 }
@@ -819,6 +828,14 @@ footer{
 
 .footer_link li:not(:first-child){
     margin-top: 1em;
+}
+
+.footer_right a{
+    transition-duration: 0.3s;
+}
+
+.footer_right a:hover{
+    opacity: 0.7;
 }
 
 .link_lower{
@@ -913,6 +930,10 @@ footer{
         padding: 80px 0;
     }
 
+    .contact_title{
+        text-align: center;
+    }
+
     .footer_wrapper{
         grid-template-columns: 1fr;
     }
@@ -936,7 +957,11 @@ footer{
     }
 
     .form_title{
-        padding: 30px 34px;
+        padding: 30px 37px;
+    }
+
+    .form_title h4{
+        line-height: initial;
     }
 
     .form_title h4 .yellow{
@@ -944,7 +969,7 @@ footer{
     }
 
     .form_title .aimitsu{
-        padding: 0.3em 0;
+        padding: 0.5em 0;
         width: 100%;
     }
 

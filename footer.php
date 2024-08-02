@@ -1,8 +1,10 @@
 <section id="contact">
     <div class="contact_wrapper">
         <div class="contact_left">
-            <span class="secTitleEn">CONTACT</span>
-            <h3 class="secTitle">無料見積もりフォーム</h3>
+            <div class="contact_title">
+                <span class="secTitleEn fadein_up">CONTACT</span>
+                <h3 class="secTitle fadein_up fadein_up_second">無料見積もりフォーム</h3>
+            </div>
             <p class="paragraph700">「House Design」は、地域の皆様に向けた雨漏り修理と防水工事の専門サービスを提供しています。当社のウェブサイトを訪れてくださり、心より感謝申し上げます。雨漏りの修理や防水工事に関するお問い合わせ、無料の診断や見積もりのご相談は、電話またはメールフォームから承っております。急ぎのご対応が必要な場合は、電話でのご連絡をいただければ、速やかにご対応いたします。</p>
             
             <a href="tel:0467-84-7404" class="footer_button"><span class="footer_tel">0467-84-7404</span><br>
@@ -69,7 +71,7 @@
     <div class="copyright">
         <p>&copy; HouseDesign All Rights Reserved</p>
     </div>
-</footer>g
+</footer>
 <?php wp_footer(); ?>
 </body>
 </html>
