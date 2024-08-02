@@ -44,7 +44,7 @@ jQuery(document).ready(function($) {
     }
 });
 
-// fade in up
+// fade in up title
 document.addEventListener('DOMContentLoaded', function() {
     const fadeinElements = document.querySelectorAll('.fadein_up');
     
@@ -70,11 +70,16 @@ window.addEventListener('scroll', function() {
         headerFixed.classList.remove('show');
     }
 });
-
 function beforeAfterSlider() {
     document.getElementById("js-boxBefore").style.width = document.getElementById("js-sliderRange").value + "%";
 }
 
+// fade in page
+document.addEventListener("DOMContentLoaded", function() {
+document.body.classList.add('loaded');
+});
+
+// top page slider
 $('.scroller_inner').slick({
     autoplay: true,
     autoplaySpeed: 0,
