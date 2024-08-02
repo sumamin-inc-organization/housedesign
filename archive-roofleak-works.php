@@ -29,15 +29,15 @@ Template Name: works_roofleak
                 <?php
                 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                 $args = array(
-                    'post_type'      => 'column',
-                    'posts_per_page' => 12,
+                    'post_type'      => 'works',
+                    'posts_per_page' => 8,
                     'post_status'    => 'publish',
                     'orderby'        => 'date',
                     'order'          => 'DESC',
                     'paged'          => $paged,
                     'tax_query'      => array(
                         array(
-                            'taxonomy' => 'column-cat',
+                            'taxonomy' => 'works-cat',
                             'field'    => 'slug',
                             'terms'    => 'roofleak',
                         ),
@@ -48,7 +48,7 @@ Template Name: works_roofleak
                 if ($roofleak_query->have_posts()) :
                     while ($roofleak_query->have_posts()) :
                         $roofleak_query->the_post();
-                        $terms = get_the_terms(get_the_ID(), 'column-cat');
+                        $terms = get_the_terms(get_the_ID(), 'works-cat');
                         $term_slugs = array();
                         if (!empty($terms) && !is_wp_error($terms)) {
                             foreach ($terms as $term) {
@@ -65,22 +65,6 @@ Template Name: works_roofleak
                         ?>
                     </div>
                     <div class="column_text">
-                        <div class="column_text_top">
-                            <p class="column_date"><?php echo get_the_date('Y.m.d'); ?></p>
-                            <p class="column_category">
-                                <?php
-                                if (!empty($terms) && !is_wp_error($terms)) {
-                                    $term_names = array();
-                                    foreach ($terms as $term) {
-                                        $term_names[] = $term->name;
-                                    }
-                                    echo esc_html(implode(', ', $term_names));
-                                } else {
-                                    echo 'カテゴリーがありません';
-                                }
-                                ?>
-                            </p>
-                        </div>
                         <p class="column_title"><?php the_title(); ?></p>
                     </div>
                 </a>
