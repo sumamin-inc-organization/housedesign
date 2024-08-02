@@ -74,20 +74,20 @@
             </div>
             <div class="service_content">
                 <div class="service_item">
-                    <h3>雨漏り</h3>
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/service1.jpg">
+                    <h3>雨漏り</h3>
                     <p>雨漏りは迅速な対応が大切。<br>いつでもすぐにご対応します。</p>
                     <a href="<?= get_permalink(get_page_by_path('roofleak')) ?>" class="top_btn">詳しくはこちら<span class="btn_arrow"></span></a>
                 </div>
                 <div class="service_item">
-                    <h3>外壁工事</h3>
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/service2.jpg">
+                    <h3>外壁工事</h3>
                     <p>できる限り既存の壁を活かした<br>施工をいたします。</p>
                     <a href="<?= get_permalink(get_page_by_path('wall')) ?>" class="top_btn">詳しくはこちら<span class="btn_arrow"></span></a>
                 </div>
                 <div class="service_item">
-                    <h3>ベランダ修復</h3>
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/service3.jpg">
+                    <h3>ベランダ修復</h3>
                     <p>雨風にさらされているベランダ｡<br>気づいたらお早めにご相談下さい｡</p>
                     <a href="<?= get_permalink(get_page_by_path('balcony')) ?>" class="top_btn">詳しくはこちら<span class="btn_arrow"></span></a>
                 </div>
