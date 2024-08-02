@@ -30,7 +30,7 @@ Template Name: works_balcony
                 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                 $args = array(
                     'post_type'      => 'works',
-                    'posts_per_page' => 12,
+                    'posts_per_page' => 8,
                     'post_status'    => 'publish',
                     'orderby'        => 'date',
                     'order'          => 'DESC',
@@ -65,22 +65,6 @@ Template Name: works_balcony
                         ?>
                     </div>
                     <div class="column_text">
-                        <div class="column_text_top">
-                            <p class="column_date"><?php echo get_the_date('Y.m.d'); ?></p>
-                            <p class="column_category">
-                                <?php
-                                if (!empty($terms) && !is_wp_error($terms)) {
-                                    $term_names = array();
-                                    foreach ($terms as $term) {
-                                        $term_names[] = $term->name;
-                                    }
-                                    echo esc_html(implode(', ', $term_names));
-                                } else {
-                                    echo 'カテゴリーがありません';
-                                }
-                                ?>
-                            </p>
-                        </div>
                         <p class="column_title"><?php the_title(); ?></p>
                     </div>
                 </a>

@@ -23,8 +23,8 @@
                 <?php
                 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                 $args = array(
-                    'post_type'      => 'column',     // ニュース投稿タイプ
-                    'posts_per_page' => 12,          // 表示件数
+                    'post_type'      => 'works',     // ニュース投稿タイプ
+                    'posts_per_page' => 8,          // 表示件数
                     'post_status'    => 'publish',  // 公開済みのみ
                     'orderby'        => 'date',     // 投稿日時で並び替え
                     'order'          => 'DESC',     // 新着順
@@ -35,7 +35,7 @@
                 if ($column_query->have_posts()) :
                     while ($column_query->have_posts()) :
                         $column_query->the_post();
-                        $terms = get_the_terms( get_the_ID(), 'column-cat' ); // 'column-cat' はカスタムタクソノミーの名前
+                        $terms = get_the_terms( get_the_ID(), 'works-cat' ); // 'works-cat' はカスタムタクソノミーの名前
                         $term_slugs = array();
                         if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
                             foreach ( $terms as $term ) {
@@ -52,25 +52,6 @@
                         ?>
                     </div>
                     <div class="column_text">
-                        <div class="column_text_top">
-                            <!-- 投稿日 -->
-                            <p class="column_date"><?php echo get_the_date('Y.m.d'); ?></p>
-                            <!-- カテゴリー -->
-                            <p class="column_category">
-                                <?php
-                                if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
-                                    $term_names = array();
-                                    foreach ( $terms as $term ) {
-                                        $term_names[] = $term->name;
-                                    }
-                                    echo implode( ', ', $term_names );
-                                } else {
-                                    echo 'カテゴリーがありません';
-                                }
-                                ?>
-                            </p>
-                        </div>
-                        <!-- タイトル -->
                         <p class="column_title"><?php the_title(); ?></p>
                     </div>
                 </a>
