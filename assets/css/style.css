@@ -25,6 +25,14 @@ body {
     font-family: "Noto Sans JP", sans-serif;
     letter-spacing: .05em;
     line-height: 1.87;
+    /* fade-in */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* fade-in */
+body.loaded {
+    opacity: 1;
 }
 
 .wrapper{
@@ -390,7 +398,7 @@ header .current{
         margin: 5vh auto 0;
         display: flex;
         flex-flow: column;
-        gap: 15px;
+        gap: 10px;
     }
 
     .header_top .navigation__list {
@@ -400,10 +408,10 @@ header .current{
 
     .navigation__list-item {
         color: var(--colorBlue);
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 700;
         letter-spacing: .01em;
-        padding-bottom: 15px;
+        padding-bottom: 10px;
         border-bottom: 1px solid var(--colorBlueLight);
     }
 
@@ -411,10 +419,10 @@ header .current{
         font-size: 16px;
         font-weight: 400;
         margin-left: 30px;
-        padding-top: 15px;
+        padding-top: 10px;
         display: flex;
         flex-flow: column;
-        gap: 15px;
+        gap: 10px;
     }
 
     .navigation__works a::before{
@@ -443,11 +451,10 @@ header .current{
         display: flex;
         flex-flow: column;
         align-items: center;
-        margin-top: 10px;
     }
 
     .hamburger_btn{
-        height: 60px;
+        height: 50px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -460,10 +467,6 @@ header .current{
     .hamburger_btn:hover{
         color: var(--colorBlue);
         background: #fff;
-    }
-
-    .navigation_btn{
-        padding-bottom: 60px;
     }
 }
 
