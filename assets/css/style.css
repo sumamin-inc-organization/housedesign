@@ -286,8 +286,9 @@ header .current{
 
 @media (max-width: 767px) {
     header{
-        padding: 20px;
-        align-items: start;
+        padding: 10px 20px;
+        align-items: center;
+        height: 60px;
     }
 
     .header_logo{
