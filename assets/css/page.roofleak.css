@@ -267,9 +267,14 @@
         width: calc((100% - 10px) / 2);
     }
 
+    .check_label{
+        width: 120px;
+    }
+    
     .wide_label{
-        font-size: 14px;
-        width: 160px;
+        font-size: 13px;
+        letter-spacing: 0;
+        width: 140px;
     }
 
     .construction {
