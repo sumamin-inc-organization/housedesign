@@ -1,3 +1,6 @@
+.single_column .wrapper {
+    max-width: 750px;
+}
 .cloumn_inner {
     background-color: #fff;
     padding: 80px;
@@ -118,6 +121,11 @@
 .column_btn:hover .btn_arrow::after {
     border-right: solid 1px var(--colorBlue);
     border-bottom: solid 1px var(--colorBlue);
+}
+@media (max-width: 800px) {
+    .single_column .wrapper {
+        max-width: 90%;
+    }
 }
 
 @media (max-width: 767px) {
