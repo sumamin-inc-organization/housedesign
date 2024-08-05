@@ -4,7 +4,7 @@
 
 <main class="under_page_main">
 
-    <section class="column">
+    <section class="works">
         <div class="wrapper">
             <p class="secTitleEn fadein_up">WORKS</p>
             <h2 class="pageTitle fadein_up fadein_up_second">施工事例</h2>
@@ -19,7 +19,7 @@
                     <a href="<?= get_permalink(get_page_by_path('works_balcony')) ?>" class="category_btn" data-category="balcony">ベランダ修復</a>
                 </div>
             </div>
-            <div class="column_content">
+            <div class="works_content">
                 <?php
                 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                 $args = array(
@@ -43,7 +43,7 @@
                             }
                         }
                 ?>
-                <a class="column_item" href="<?php the_permalink(); ?>" data-category="<?php echo esc_attr(implode(' ', $term_slugs)); ?>">
+                <div class="works_item">
                     <div class="column_img">
                         <?php
                         if ( has_post_thumbnail() ) {
@@ -51,10 +51,11 @@
                         }
                         ?>
                     </div>
-                    <div class="column_text">
-                        <p class="column_title"><?php the_title(); ?></p>
-                    </div>
-                </a>
+                    <a class="works_text" href="<?php the_permalink(); ?>" data-category="<?php echo esc_attr(implode(' ', $term_slugs)); ?>">
+                        <p class="works_title"><?php the_title(); ?></p>
+                        <p class="works_excerpt"><?php the_excerpt(); ?></p>
+                    </a>
+                </div>
                 <?php
                     endwhile;
                     wp_reset_postdata();
