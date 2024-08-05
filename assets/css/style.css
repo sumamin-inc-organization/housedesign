@@ -696,7 +696,7 @@ header .current{
     border: solid 2px var(--colorBlue);
     border-radius: 4px;
     position: absolute;
-    top: 0.3em;
+    top: 1px;
     left: -1em;
 }
 
@@ -707,7 +707,7 @@ header .current{
     border-right: solid 2px var(--colorBlue);
     border-bottom: solid 2px var(--colorBlue);
     position: absolute;
-    top: 0.4em;
+    top: 3px;
     left: -0.7em;
     transform: rotate(45deg);
     opacity: 0;

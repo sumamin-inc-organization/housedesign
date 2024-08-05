@@ -121,3 +121,10 @@ function custom_post_types() {
     );
 }
 add_action('init', 'custom_post_types');
+
+
+// excerpt文字制限
+function custom_excerpt_length( $length ) {
+    return 40;	//表示したい文字数
+}	
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
