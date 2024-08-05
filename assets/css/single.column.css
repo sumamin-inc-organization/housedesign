@@ -1,0 +1,132 @@
+.cloumn_inner {
+    background-color: #fff;
+    padding: 80px;
+    margin-top: 113px;
+    margin-bottom: 80px;
+}
+.single_column_info {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+.single_column_date {
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    color: #333333;
+}
+.single_column_cat {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    color: #12577D;
+    display: block;
+    background-color: #DCE6F0;
+    border-radius: 999px;
+    padding: 0 18px;
+    height: 20px;
+    line-height: 1.5;
+}
+.single_column_title {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    padding-top: 20px;
+}
+.single_column_img {
+    margin-top: 30px;
+    width: 100%;
+    height: unset;
+}
+.single_column_img img{
+    width: 100%;
+    object-fit: cover;
+}
+.single_column_content {
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.05rem;
+    text-align: justify;
+}
+.column_btn {
+    display: block;
+    width: 200px;
+    height: 50px;
+    border-radius: 50px;
+    color: #fff;
+    background: var(--colorBlue);
+    border: solid 1px var(--colorBlue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    letter-spacing: .016em;
+    margin: auto;
+    margin-bottom: 140px;
+    transition: 0.3s;
+    cursor: pointer;
+    position: relative;
+    padding-right: 15px;
+}
+.column_btn:hover {
+    color: var(--colorBlue);
+    background: #fff;
+}
+.column_btn .btn_arrow {
+    content: "";
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: solid 1px #fff;
+    position: absolute;
+    right: 20px;
+    margin-left: 10px;
+    transition: 0.3s;
+}
+.column_btn:hover .btn_arrow {
+    border: solid 1px var(--colorBlue);
+}
+.column_btn:hover .btn_arrow::before {
+    background: var(--colorBlue);
+}
+.btn_arrow::before {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 8px;
+    background: #fff;
+    position: absolute;
+    top: 8.5px;
+    right: 5px;
+    transition: 0.3s;
+}
+.btn_arrow::after {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-right: solid 1px #fff;
+    border-bottom: solid 1px #fff;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 5.5px;
+    right: 5.5px;
+    transition: 0.3s;
+}
+.column_btn:hover .btn_arrow::after {
+    border-right: solid 1px var(--colorBlue);
+    border-bottom: solid 1px var(--colorBlue);
+}
+
+@media (max-width: 767px) {
+    .cloumn_inner {
+        margin-top: 15px;
+        margin-bottom: 60px;
+        padding: 30px 20px 60px 20px;
+    }
+    .column_btn {
+        margin-bottom: 80px;
+    }
+}
