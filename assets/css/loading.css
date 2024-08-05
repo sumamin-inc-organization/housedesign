@@ -38,3 +38,9 @@
 .loading__img img {
 	width: 100%;
 }
+@media (max-width: 767px) {
+    #loading {
+        background-image: url(../images/common/loading_bg_sp.jpg);
+        background-attachment: unset;
+    }
+}
