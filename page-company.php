@@ -38,7 +38,7 @@
                 <div class="message_inner">
                     <h3>初めてのお客様も<br class="for-sp">一生のお付き合いに</h3>
                     <p class="message_text">あらゆる住宅のお悩みに迅速かつ確実に対応します。初めてのお客様が一生のお付き合いに。豊富な経験と技術で、信頼と安心で繋がっていけますようにと私たちは考えます。快適な暮らしをお届けするために。地域の皆様の安心と満足を第一に、真心を込めたサービスを提供致します。</p>
-                    <p class="message_name">代表取締役<span class="name">湯川 直樹</span><span class="name_en">NAOKI YUKAWA</span></p>
+                    <p class="message_name">代表取締役<span class="president_name">湯川 直樹</span><span class="name_en">NAOKI YUKAWA</span></p>
                 </div>
             </div>
         </div>
