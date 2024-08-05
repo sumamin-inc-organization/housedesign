@@ -44,13 +44,29 @@
                         }
                 ?>
                 <div class="works_item">
-                    <div class="column_img">
-                        <?php
-                        if ( has_post_thumbnail() ) {
-                            the_post_thumbnail( 'full' );
-                        }
-                        ?>
+                    <?php
+                    $image1 = get_post_meta(get_the_ID(), '_works_image1', true);
+                    $image2 = get_post_meta(get_the_ID(), '_works_image2', true);
+                    ?>
+        
+                    <div class="works-images">
+                        <div class="works_ba">
+                            <div class="box_before js-boxBefore">
+                                <?php if ($image1) : ?>
+                                    <img src="<?php echo esc_url($image1); ?>" alt="施工前" class="works-image">
+                                <?php endif; ?>
+                                <span class="label before-label">BEFORE</span>
+                            </div>
+                            <div class="box_after">
+                                <?php if ($image2) : ?>
+                                    <img src="<?php echo esc_url($image2); ?>" alt="施工後" class="works-image">
+                                <?php endif; ?>
+                                <span class="label after-label">AFTER</span>
+                            </div>
+                            <input type="range" min="0" max="100" value="50" oninput="beforeAfterSlider()" onchange="beforeAfterSlider()" class="slider_range js-sliderRange">
+                        </div>
                     </div>
+
                     <a class="works_text" href="<?php the_permalink(); ?>" data-category="<?php echo esc_attr(implode(' ', $term_slugs)); ?>">
                         <p class="works_title"><?php the_title(); ?></p>
                         <p class="works_excerpt"><?php the_excerpt(); ?></p>

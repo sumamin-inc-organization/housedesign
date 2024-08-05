@@ -128,3 +128,119 @@ function custom_excerpt_length( $length ) {
     return 40;	//表示したい文字数
 }	
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+// 投稿画面にメディアアップローダーを追加
+// メタボックスを追加する関数
+function add_works_meta_boxes() {
+    add_meta_box(
+        'works_media_meta_box', // メタボックスのID
+        '施工事例写真', // メタボックスのタイトル
+        'works_media_meta_box_callback', // コールバック関数
+        'works', // 対象の投稿タイプ
+        'normal', // 表示する場所
+        'high' // 表示される優先度
+    );
+}
+add_action('add_meta_boxes', 'add_works_meta_boxes');
+
+// メタボックスのコールバック関数
+function works_media_meta_box_callback($post) {
+    wp_nonce_field('works_media_meta_box', 'works_media_meta_box_nonce');
+
+    $image1 = get_post_meta($post->ID, '_works_image1', true);
+    $image2 = get_post_meta($post->ID, '_works_image2', true);
+
+    ?>
+    <p>
+        <label for="works_image1">施工前:</label>
+        <input type="hidden" id="works_image1" name="works_image1" value="<?php echo esc_attr($image1); ?>">
+        <input type="button" class="button works-media-upload" data-target="#works_image1" value="画像を選択">
+        <span class="works-image-preview">
+            <?php if ($image1): ?>
+                <img src="<?php echo esc_url($image1); ?>" alt="Image 1" style="max-width: 100px; max-height: 100px;">
+            <?php endif; ?>
+        </span>
+    </p>
+    <p>
+        <label for="works_image2">施工後:</label>
+        <input type="hidden" id="works_image2" name="works_image2" value="<?php echo esc_attr($image2); ?>">
+        <input type="button" class="button works-media-upload" data-target="#works_image2" value="画像を選択">
+        <span class="works-image-preview">
+            <?php if ($image2): ?>
+                <img src="<?php echo esc_url($image2); ?>" alt="Image 2" style="max-width: 100px; max-height: 100px;">
+            <?php endif; ?>
+        </span>
+    </p>
+    <script>
+        jQuery(document).ready(function($) {
+            var mediaUploader;
+
+            $('.works-media-upload').click(function(e) {
+                e.preventDefault();
+
+                var targetInput = $(this).data('target');
+
+                // メディアアップローダーが既に存在する場合は再利用
+                if (mediaUploader) {
+                    mediaUploader.open();
+                    return;
+                }
+
+                // 新しいメディアアップローダーを作成
+                mediaUploader = wp.media.frames.file_frame = wp.media({
+                    title: '画像を選択',
+                    button: {
+                        text: '画像を選択'
+                    },
+                    multiple: false // 1つの画像のみ選択可能
+                });
+
+                // 画像が選択された後の処理
+                mediaUploader.on('select', function() {
+                    var attachment = mediaUploader.state().get('selection').first().toJSON();
+                    $(targetInput).val(attachment.url);
+                    $(targetInput).next('.works-image-preview').html('<img src="' + attachment.url + '" style="max-width: 100px; max-height: 100px;">');
+                });
+
+                // メディアアップローダーを開く
+                mediaUploader.open();
+            });
+        });
+    </script>
+    <?php
+}
+
+// メタデータを保存する関数
+function save_works_meta_boxes($post_id) {
+    if (!isset($_POST['works_media_meta_box_nonce'])) {
+        return;
+    }
+    if (!wp_verify_nonce($_POST['works_media_meta_box_nonce'], 'works_media_meta_box')) {
+        return;
+    }
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return;
+    }
+    if (!current_user_can('edit_post', $post_id)) {
+        return;
+    }
+
+    if (isset($_POST['works_image1'])) {
+        update_post_meta($post_id, '_works_image1', esc_url_raw($_POST['works_image1']));
+    }
+    if (isset($_POST['works_image2'])) {
+        update_post_meta($post_id, '_works_image2', esc_url_raw($_POST['works_image2']));
+    }
+}
+add_action('save_post', 'save_works_meta_boxes');
+
+// テンプレートファイル内で画像を表示する例
+$image1 = get_post_meta(get_the_ID(), '_works_image1', true);
+$image2 = get_post_meta(get_the_ID(), '_works_image2', true);
+
+if ($image1) {
+    echo '<img src="' . esc_url($image1) . '" alt="Image 1">';
+}
+if ($image2) {
+    echo '<img src="' . esc_url($image2) . '" alt="Image 2">';
+}

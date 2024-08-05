@@ -103,13 +103,13 @@
                     <a href="<?= get_post_type_archive_link('works') ?>" class="top_btn for-sp">実績一覧<span class="btn_arrow"></span></a>
                     <div class="works_inner">
                         <div class="works_ba">
-                            <div class="box_before" id="js-boxBefore">
+                            <div class="box_before js-boxBefore" id="js-boxBefore">
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/works_before.jpg" alt="ビフォー画像">
                             </div>
                             <div class="box_after">
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/works_after.jpg" alt="アフター画像">
                             </div>
-                            <input type="range" min="0" max="100" value="50" oninput="beforeAfterSlider()" onchange="beforeAfterSlider()" class="slider_range" id="js-sliderRange">
+                            <input type="range" min="0" max="100" value="50" oninput="beforeAfterSlider()" onchange="beforeAfterSlider()" class="slider_range js-sliderRange" id="js-sliderRange">
                         </div>
                         <p class="works_annotation">※左右にスクロールできます</p>
                     </div>
