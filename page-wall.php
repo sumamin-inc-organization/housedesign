@@ -44,7 +44,7 @@
                     </div>
                     <div class="check_item">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/wall/check3.jpg">
-                        <p class="check_label">コケや藻・汚れ</p>
+                        <p class="check_label">コケや藻･汚れ</p>
                     </div>
                     <div class="check_item">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/wall/check4.jpg">
