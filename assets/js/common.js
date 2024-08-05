@@ -70,8 +70,28 @@ window.addEventListener('scroll', function() {
         headerFixed.classList.remove('show');
     }
 });
+
+// works before after
 function beforeAfterSlider() {
-    document.getElementById("js-boxBefore").style.width = document.getElementById("js-sliderRange").value + "%";
+    document.querySelector(".js-boxBefore").style.width = document.querySelector(".js-sliderRange").value + "%";
+
+    const slider = document.querySelector('.js-sliderRange');
+    const boxBefore = document.querySelector('.js-boxBefore');
+    const beforeLabel = document.querySelector('.before-label');
+    const afterLabel = document.querySelector('.after-label');
+
+    // スライダーの値を取得してboxBeforeのclip範囲を変更
+    const sliderValue = slider.value;
+    boxBefore.style.clip = `rect(auto, ${sliderValue}%, auto, 0)`;
+
+    // ラベルの表示を制御
+    if (sliderValue > 50) {
+        beforeLabel.style.opacity = 1; // BEFOREラベルを表示
+        afterLabel.style.opacity = 0;  // AFTERラベルを非表示
+    } else {
+    beforeLabel.style.opacity = 0; // BEFOREラベルを非表示
+    afterLabel.style.opacity = 1;  // AFTERラベルを表示
+    }
 }
 
 // fade in page
