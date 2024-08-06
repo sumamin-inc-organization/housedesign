@@ -129,7 +129,7 @@ body.loaded {
 /* --------------------
     Before / After
 -------------------- */
-/* .works_ba {
+.works_ba {
     position: relative;
     overflow: hidden;
     margin: 0 auto;
@@ -209,82 +209,6 @@ body.loaded {
 
 .slider_range {
     z-index: 1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    opacity: 0;
-    cursor: col-resize;
-} */
-
-.works_ba {
-    position: relative;
-    overflow: hidden;
-    margin: 0 auto;
-    aspect-ratio: 76 / 50;
-    object-fit: cover;
-}
-
-.box_before {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
-    z-index: 2;
-}
-
-.box_before img {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: left center;
-}
-
-.box_after {
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
-    z-index: 1;
-}
-
-.box_after img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-
-.box_before .label,
-.box_after .label {
-    color: #fff;
-    display: block;
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: 0.05rem;
-    position: absolute;
-    left: 10px;
-    bottom: 10px;
-    transition: 0.3s;
-    opacity: 0;
-}
-
-.box_after .label {
-    left: auto;
-    right: 10px;
-}
-
-.slider_range {
-    z-index: 3; /* ラベルより上に配置するために高いz-indexを設定 */
     position: absolute;
     top: 0;
     left: 0;
