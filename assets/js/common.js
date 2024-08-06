@@ -71,6 +71,11 @@ window.addEventListener('scroll', function() {
     }
 });
 
+// fade in page
+document.addEventListener("DOMContentLoaded", function() {
+    document.body.classList.add('loaded');
+});
+
 // works before after
 $('.js-sliderRange').on('change input', function() {
     $(this).siblings(".js-boxBefore").width($(this).val() + "%");
@@ -92,11 +97,6 @@ $('.js-sliderRange').on('change input', function() {
         $beforeLabel.css('opacity', 0); // BEFOREラベルを非表示
         $afterLabel.css('opacity', 1);  // AFTERラベルを表示
     }
-});
-
-// fade in page
-document.addEventListener("DOMContentLoaded", function() {
-document.body.classList.add('loaded');
 });
 
 // top page slider
