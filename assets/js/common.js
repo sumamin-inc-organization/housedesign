@@ -77,46 +77,26 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // works before after
-function beforeAfterSlider() {
-    const sliders = document.querySelectorAll('.js-sliderRange');
-    const boxBefores = document.querySelectorAll('.js-boxBefore');
-    const boxAfters = document.querySelectorAll('.box_after');
+$('.js-sliderRange').on('change input', function() {
+    $(this).siblings(".js-boxBefore").width($(this).val() + "%");
 
-    sliders.forEach((slider, index) => {
-        const sliderValue = slider.value;
-        const boxBefore = boxBefores[index];
-        const boxAfter = boxAfters[index];
-        const beforeLabel = boxBefore.querySelector('.before-label');
-        const afterLabel = boxAfter.querySelector('.after-label');
+    const $slider = $(this);
+    const $boxBefore = $(this).siblings(".js-boxBefore");
+    const $beforeLabel = $boxBefore.children('.before-label');
+    const $afterLabel = $(this).siblings(".box_after").children('.after-label');
 
-        // スライダーの値に基づいてclip-pathを変更
-        boxBefore.style.clipPath = `polygon(0 0, ${sliderValue}% 0, ${sliderValue}% 100%, 0 100%)`;
-        boxAfter.style.clipPath = `polygon(${sliderValue}% 0, 100% 0, 100% 100%, ${sliderValue}% 100%)`;
+    // スライダーの値を取得してboxBeforeのclip範囲を変更
+    const sliderValue = $slider.val();
+    $boxBefore.css('clip', `rect(auto, ${sliderValue}%, auto, 0)`);
 
-        // ラベルの表示を制御
-        if (sliderValue < 50) {
-            beforeLabel.style.opacity = 0; // BEFOREラベルを表示
-            afterLabel.style.opacity = 1;  // AFTERラベルを非表示
-        } else if (sliderValue > 50) {
-            beforeLabel.style.opacity = 1; // BEFOREラベルを非表示
-            afterLabel.style.opacity = 0;  // AFTERラベルを表示
-        } else {
-            beforeLabel.style.opacity = 1; // ちょうど50の時、両方のラベルを表示
-            afterLabel.style.opacity = 1;
-        }
-    });
-}
-
-// スライダーの初期化
-document.addEventListener('DOMContentLoaded', function() {
-    const sliders = document.querySelectorAll('.js-sliderRange');
-    sliders.forEach(slider => {
-        slider.addEventListener('input', beforeAfterSlider);
-        slider.addEventListener('change', beforeAfterSlider);
-    });
-
-    // 初期状態の設定
-    beforeAfterSlider();
+    // ラベルの表示を制御
+    if (sliderValue > 50) {
+        $beforeLabel.css('opacity', 1); // BEFOREラベルを表示
+        $afterLabel.css('opacity', 0);  // AFTERラベルを非表示
+    } else {
+        $beforeLabel.css('opacity', 0); // BEFOREラベルを非表示
+        $afterLabel.css('opacity', 1);  // AFTERラベルを表示
+    }
 });
 
 // top page slider
