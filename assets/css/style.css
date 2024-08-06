@@ -1130,6 +1130,9 @@ footer{
 .flow_deco {
     overflow: hidden;
     display: flex;
+    /* width: 100vw; */
+    /* margin-inline: calc(50% - 50vw); */
+    /* position: absolute; */
     width: 100%;
     /* margin-inline: calc(50% - 50vw); */
     top: -190px;
