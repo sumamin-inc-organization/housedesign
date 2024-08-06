@@ -63,7 +63,7 @@
                                 <?php endif; ?>
                                 <span class="label after-label">AFTER</span>
                             </div>
-                            <input type="range" min="0" max="100" value="50" oninput="beforeAfterSlider()" onchange="beforeAfterSlider()" class="slider_range js-sliderRange">
+                            <input type="range" min="0" max="100" value="50" class="slider_range js-sliderRange">
                         </div>
                     </div>
 
