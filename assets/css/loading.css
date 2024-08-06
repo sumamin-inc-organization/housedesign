@@ -5,11 +5,7 @@
     width: 100%;
     height: 100dvh;
     height: 100%; /*for IE*/
-    background-image: url(../images/common/loading_back.jpg);
-    background-repeat: repeat;
-    background-position: center top;
-    background-size: cover;
-    background-attachment: fixed;
+    background-color: #DCE6F0;
     overflow-x: hidden;
     display: flex;
     justify-content: center;
@@ -37,10 +33,4 @@
 
 .loading__img img {
 	width: 100%;
-}
-@media (max-width: 767px) {
-    #loading {
-        background-image: url(../images/common/loading_bg_sp.jpg);
-        background-attachment: unset;
-    }
 }
