@@ -106,10 +106,12 @@
                     <div class="works_inner">
                         <div class="works_ba">
                             <div class="box_before js-boxBefore" id="js-boxBefore">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/works_before.jpg" alt="ビフォー画像">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/works_01_bf.jpg" alt="ビフォー画像">
+                                <span class="label before-label">BEFORE</span>
                             </div>
                             <div class="box_after">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/works_after.jpg" alt="アフター画像">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/works_01_af.jpg" alt="アフター画像">
+                                <span class="label after-label">AFTER</span>
                             </div>
                             <input type="range" min="0" max="100" value="50" oninput="beforeAfterSlider()" onchange="beforeAfterSlider()" class="slider_range js-sliderRange" id="js-sliderRange">
                         </div>
