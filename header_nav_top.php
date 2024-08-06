@@ -11,8 +11,8 @@
                     <li><a href="<?= get_permalink(get_page_by_path('balcony')) ?>" class="header_link">ベランダ修復</a></li>
                 </ul>
             </li>
-            <li <?= is_post_type_archive('works') ? ' class="current"' : '' ?>><a href="<?= get_post_type_archive_link('works') ?>" class="header_link">施工事例</a></li>
-            <li <?= (is_post_type_archive('column') || is_singular('column')) ? ' class="current"' : '' ?>><a href="<?= get_post_type_archive_link('column') ?>" class="header_link">コラム</a></li>
+            <li <?= (is_post_type_archive('works') || is_singular('works') || is_page('works_roofleak') || is_page('works_wall') || is_page('works_balcony')) ? ' class="current"' : '' ?>><a href="<?= get_post_type_archive_link('works') ?>" class="header_link">施工事例</a></li>
+            <li <?= (is_post_type_archive('column') || is_singular('column') || is_page('column_roofleak') || is_page('column_wall') || is_page('column_balcony')) ? ' class="current"' : '' ?>><a href="<?= get_post_type_archive_link('column') ?>" class="header_link">コラム</a></li>
             <li <?= is_page('company') ? ' class="current"' : '' ?>><a href="<?= get_permalink(get_page_by_path('company')) ?>" class="header_link">会社概要</a></li>
         </ul>
         <a href="<?= get_permalink(get_page_by_path('contact')) ?>" class="header_btn">お問い合わせ</a>
@@ -71,8 +71,8 @@
                     <li><a href="<?= get_permalink(get_page_by_path('balcony')) ?>" class="header_link">ベランダ修復</a></li>
                 </ul>
             </li>
-            <li <?= is_post_type_archive('works') ? ' class="current"' : '' ?>><a href="<?= get_post_type_archive_link('works') ?>" class="header_link">施工事例</a></li>
-            <li <?= (is_post_type_archive('column') || is_singular('column')) ? ' class="current"' : '' ?>><a href="<?= get_post_type_archive_link('column') ?>" class="header_link">コラム</a></li>
+            <li <?= (is_post_type_archive('works') || is_singular('works') || is_page('works_roofleak') || is_page('works_wall') || is_page('works_balcony')) ? ' class="current"' : '' ?>><a href="<?= get_post_type_archive_link('works') ?>" class="header_link">施工事例</a></li>
+            <li <?= (is_post_type_archive('column') || is_singular('column') || is_page('column_roofleak') || is_page('column_wall') || is_page('column_balcony')) ? ' class="current"' : '' ?>><a href="<?= get_post_type_archive_link('column') ?>" class="header_link">コラム</a></li>
             <li <?= is_page('company') ? ' class="current"' : '' ?>><a href="<?= get_permalink(get_page_by_path('company')) ?>" class="header_link">会社概要</a></li>
         </ul>
         <a href="<?= get_permalink(get_page_by_path('contact')) ?>" class="header_btn">お問い合わせ</a>
