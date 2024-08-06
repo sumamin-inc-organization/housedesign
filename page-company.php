@@ -28,6 +28,8 @@
         <div class="flow_deco">
             <p class="flow_deco_item">HOUSE DESIGN</p>
             <p class="flow_deco_item">HOUSE DESIGN</p>
+            <p class="flow_deco_item">HOUSE DESIGN</p>
+            <p class="flow_deco_item">HOUSE DESIGN</p>
         </div>
         <div class="wrapper">
             <div class="message_content">

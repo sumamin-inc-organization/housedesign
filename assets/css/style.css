@@ -1130,14 +1130,15 @@ footer{
 .flow_deco {
     overflow: hidden;
     display: flex;
-    width: 100vw;
-    margin-inline: calc(50% - 50vw);
-    position: absolute;
+    width: 100%;
+    /* margin-inline: calc(50% - 50vw); */
     top: -190px;
+    position: absolute;
 }
 
 .flow_deco_item {
-    flex-shrink: 0;
+    /* flex-shrink: 0; */
+    flex: 0 0 auto;
     white-space: nowrap;
     font-family: "Roboto", sans-serif;;
     font-size: 335px;
@@ -1145,14 +1146,16 @@ footer{
     letter-spacing: .025em;
     color: var(--colorBlueLight);
     padding-right: 60px;
+    will-change: transform;
+    width: 2501px;
 }
 
 .flow_deco_item:nth-child(odd) {
-    animation: MoveLeft 24s -12s infinite linear;
+    animation: loop 24s -12s infinite linear;
 }
 
 .flow_deco_item:nth-child(even) {
-    animation: MoveLeft2 24s infinite linear;
+    animation: loop2 24s infinite linear;
 }
 
 @keyframes flow {
@@ -1182,6 +1185,24 @@ footer{
     }
 }
 
+@keyframes loop {
+    0% {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes loop2 {
+    0% {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-200%);
+    }
+}
+
 @media (max-width: 1024px) {
     .flow_deco{
         top: -112px;
@@ -1189,6 +1210,7 @@ footer{
     
     .flow_deco_item{
         font-size: 200px;
+        width: 1517px;
     }
 }
 
@@ -1199,5 +1221,6 @@ footer{
 
     .flow_deco_item{
         font-size: 150px;
+        width: 1153px;
     }
 }
