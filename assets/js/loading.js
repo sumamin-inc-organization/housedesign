@@ -4,11 +4,11 @@ jQuery(document).ready(function($) {
             $('.loading__img').fadeIn(1000);
         }, 300);
         setTimeout(function() {
-            $('.loading__img').fadeOut(500);
-        }, 2000);
+            $('.loading__img').fadeOut(800);
+        }, 1900);
         setTimeout(function() {
-            $('#loading').fadeOut(1000);
-        }, 2200);
+            $('#loading').fadeOut(1200);
+        }, 2400);
         setTimeout(function() {
             var videos = $('video');
             $(videos).each(function() {
@@ -17,7 +17,7 @@ jQuery(document).ready(function($) {
                 video.currentTime = 0;
                 video.play();
             });
-        }, 2400);
+        }, 2600);
     }
 });
 
@@ -27,11 +27,11 @@ jQuery(window).on('load', function() {
             $('.loading__img').fadeIn(1000);
         }, 300);
         setTimeout(function() {
-            $('.loading__img').fadeOut(500);
-        }, 2000);
+            $('.loading__img').fadeOut(800);
+        }, 1900);
         setTimeout(function() {
-            $('#loading').fadeOut(1000);
-        }, 2200);
+            $('#loading').fadeOut(1200);
+        }, 2400);
         setTimeout(function() {
             var videos = $('video');
             $(videos).each(function() {
@@ -40,6 +40,6 @@ jQuery(window).on('load', function() {
                 video.currentTime = 0;
                 video.play();
             });
-        }, 2400);
+        }, 2600);
     }
 });

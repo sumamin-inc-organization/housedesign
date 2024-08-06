@@ -12,7 +12,8 @@
                         $terms = get_the_terms($post->ID, 'column-cat'); //タクソノミーのスラッグを設定
                         if ($terms) :
                             foreach ($terms as $term) {
-                                echo '<a  class="single_column_cat" href="' . get_term_link($term) . '">' . $term->name . '</a>';
+                                $link = str_replace('column-cat/', 'column_', get_term_link($term));
+                                echo '<a  class="single_column_cat" href="' . $link . '">' . $term->name . '</a>';
                             }
                         endif;
                     ?>
