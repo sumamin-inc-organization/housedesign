@@ -129,7 +129,7 @@ body.loaded {
 /* --------------------
     Before / After
 -------------------- */
-.works_ba {
+/* .works_ba {
     position: relative;
     overflow: hidden;
     margin: 0 auto;
@@ -218,7 +218,164 @@ body.loaded {
     padding: 0;
     opacity: 0;
     cursor: col-resize;
+} */
+
+.works_ba {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    aspect-ratio: 76 / 50;
+    object-fit: cover;
 }
+
+.box_before {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+    z-index: 2;
+}
+
+.box_before img {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left center;
+}
+
+.box_after {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+    z-index: 1;
+}
+
+.box_after img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.box_before .label,
+.box_after .label {
+    color: #fff;
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    transition: 0.3s;
+    opacity: 0;
+}
+
+.box_after .label {
+    left: auto;
+    right: 10px;
+}
+
+.slider_range {
+    -webkit-appearance: none; /* Webkit系ブラウザのデフォルトスタイルを無効化 */
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, #f00, #00f); /* グラデーション背景 */
+    border-radius: 2px;
+    outline: none;
+    opacity: 1;
+    cursor: pointer;
+    /* transition: background 0.3s ease; */
+    pointer-events: auto; /* スライダーの操作を有効化 */
+    z-index: 5; /* スライダーが他の要素の上に表示されるように */
+}
+
+/* Webkit系ブラウザ用 */
+.slider_range::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Webkit系ブラウザのデフォルトスタイルを無効化 */
+    appearance: none;
+    width: 45px; /* サムの幅 */
+    height: 45px; /* サムの高さ */
+    /* background: rgba(255, 255, 255, 0.8); サムの背景色 */
+    border: 5px solid rgba(255, 255, 255, 0.7); /* サムのボーダー */
+    border-radius: 50%; /* サムの形状を円形に */
+    cursor: pointer;
+    box-shadow: 10px 0 15px -13px #000; /* サムに影を追加 */
+    position: relative;
+    z-index: 6;
+    /* transition: background 0.3s ease, border 0.3s ease; */
+}
+
+.slider_range::-webkit-slider-thumb:hover {
+    /* background: #fff; ホバー時のサムの背景色 */
+    /* border: 2px solid #0f0; ホバー時のサムのボーダー色 */
+}
+
+/* Mozilla系ブラウザ用 */
+.slider_range::-moz-range-thumb {
+    width: 45px; /* サムの幅 */
+    height: 45px; /* サムの高さ */
+    background: rgba(255, 255, 255, 0.8); /* サムの背景色 */
+    border: 2px solid #f00; /* サムのボーダー */
+    border-radius: 50%; /* サムの形状を円形に */
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* サムに影を追加 */
+    position: relative;
+    z-index: 6;
+    transition: background 0.3s ease, border 0.3s ease;
+}
+
+.slider_range::-moz-range-thumb:hover {
+    background: #fff; /* ホバー時のサムの背景色 */
+    border: 2px solid #0f0; /* ホバー時のサムのボーダー色 */
+}
+
+/* Microsoft Edge, IE用 */
+.slider_range::-ms-thumb {
+    width: 45px; /* サムの幅 */
+    height: 45px; /* サムの高さ */
+    background: rgba(255, 255, 255, 0.8); /* サムの背景色 */
+    border: 2px solid #f00; /* サムのボーダー */
+    border-radius: 50%; /* サムの形状を円形に */
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* サムに影を追加 */
+    position: relative;
+    z-index: 6;
+    transition: background 0.3s ease, border 0.3s ease;
+}
+
+.slider_range::-ms-thumb:hover {
+    background: #fff; /* ホバー時のサムの背景色 */
+    border: 2px solid #0f0; /* ホバー時のサムのボーダー色 */
+}
+
+.slider_range::-ms-track {
+    width: 100%;
+    height: 4px;
+    background: transparent; /* スライダートラックの背景を透明にする */
+    border-color: transparent;
+    color: transparent;
+    border-width: 0;
+    border-radius: 2px;
+}
+
+.slider_range::-ms-fill-lower {
+    background: linear-gradient(to right, #f00, #00f); /* 下部トラックのグラデーション */
+    border-radius: 2px;
+}
+
+.slider_range::-ms-fill-upper {
+    background: linear-gradient(to right, #00f, #f00); /* 上部トラックのグラデーション */
+    border-radius: 2px;
+}
+
 
 @media screen and (max-width:1024px){
     .works_ba {

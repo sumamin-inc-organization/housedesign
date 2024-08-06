@@ -451,10 +451,6 @@ body{
         flex-flow: column-reverse;
     }
 
-    .works_ba {
-        height: auto;
-    }
-
     .column_content{
         gap: 20px;
     }

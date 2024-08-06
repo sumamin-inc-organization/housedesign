@@ -71,32 +71,52 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// works before after
-function beforeAfterSlider() {
-    document.querySelector(".js-boxBefore").style.width = document.querySelector(".js-sliderRange").value + "%";
-
-    const slider = document.querySelector('.js-sliderRange');
-    const boxBefore = document.querySelector('.js-boxBefore');
-    const beforeLabel = document.querySelector('.before-label');
-    const afterLabel = document.querySelector('.after-label');
-
-    // スライダーの値を取得してboxBeforeのclip範囲を変更
-    const sliderValue = slider.value;
-    boxBefore.style.clip = `rect(auto, ${sliderValue}%, auto, 0)`;
-
-    // ラベルの表示を制御
-    if (sliderValue > 50) {
-        beforeLabel.style.opacity = 1; // BEFOREラベルを表示
-        afterLabel.style.opacity = 0;  // AFTERラベルを非表示
-    } else {
-    beforeLabel.style.opacity = 0; // BEFOREラベルを非表示
-    afterLabel.style.opacity = 1;  // AFTERラベルを表示
-    }
-}
-
 // fade in page
 document.addEventListener("DOMContentLoaded", function() {
-document.body.classList.add('loaded');
+    document.body.classList.add('loaded');
+});
+
+// works before after
+function beforeAfterSlider() {
+    const sliders = document.querySelectorAll('.js-sliderRange');
+    const boxBefores = document.querySelectorAll('.js-boxBefore');
+    const boxAfters = document.querySelectorAll('.box_after');
+
+    sliders.forEach((slider, index) => {
+        const sliderValue = slider.value;
+        const boxBefore = boxBefores[index];
+        const boxAfter = boxAfters[index];
+        const beforeLabel = boxBefore.querySelector('.before-label');
+        const afterLabel = boxAfter.querySelector('.after-label');
+
+        // スライダーの値に基づいてclip-pathを変更
+        boxBefore.style.clipPath = `polygon(0 0, ${sliderValue}% 0, ${sliderValue}% 100%, 0 100%)`;
+        boxAfter.style.clipPath = `polygon(${sliderValue}% 0, 100% 0, 100% 100%, ${sliderValue}% 100%)`;
+
+        // ラベルの表示を制御
+        if (sliderValue < 50) {
+            beforeLabel.style.opacity = 0; // BEFOREラベルを表示
+            afterLabel.style.opacity = 1;  // AFTERラベルを非表示
+        } else if (sliderValue > 50) {
+            beforeLabel.style.opacity = 1; // BEFOREラベルを非表示
+            afterLabel.style.opacity = 0;  // AFTERラベルを表示
+        } else {
+            beforeLabel.style.opacity = 1; // ちょうど50の時、両方のラベルを表示
+            afterLabel.style.opacity = 1;
+        }
+    });
+}
+
+// スライダーの初期化
+document.addEventListener('DOMContentLoaded', function() {
+    const sliders = document.querySelectorAll('.js-sliderRange');
+    sliders.forEach(slider => {
+        slider.addEventListener('input', beforeAfterSlider);
+        slider.addEventListener('change', beforeAfterSlider);
+    });
+
+    // 初期状態の設定
+    beforeAfterSlider();
 });
 
 // top page slider
