@@ -130,6 +130,11 @@ function custom_excerpt_length( $length ) {
 }	
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
+// excerpt省略記号を「…」に変更する
+add_filter( 'excerpt_more', function( $more ){
+    return '&hellip;';
+}, 999 );
+
 // 投稿画面にメディアアップローダーを追加
 // メタボックスを追加する関数
 function add_works_meta_boxes() {
@@ -156,6 +161,7 @@ function works_media_meta_box_callback($post) {
         <label for="works_image1">施工前:</label>
         <input type="hidden" id="works_image1" name="works_image1" value="<?php echo esc_attr($image1); ?>">
         <input type="button" class="button works-media-upload" data-target="#works_image1" value="画像を選択">
+        <input type="button" class="button works-media-remove" data-target="#works_image1" value="画像を取り消す" style="<?php echo $image1 ? 'display:inline-block;' : 'display:none;'; ?>">
         <span class="works-image-preview">
             <?php if ($image1): ?>
                 <img src="<?php echo esc_url($image1); ?>" alt="Image 1" style="max-width: 100px; max-height: 100px;">
@@ -166,6 +172,7 @@ function works_media_meta_box_callback($post) {
         <label for="works_image2">施工後:</label>
         <input type="hidden" id="works_image2" name="works_image2" value="<?php echo esc_attr($image2); ?>">
         <input type="button" class="button works-media-upload" data-target="#works_image2" value="画像を選択">
+        <input type="button" class="button works-media-remove" data-target="#works_image2" value="画像を取り消す" style="<?php echo $image2 ? 'display:inline-block;' : 'display:none;'; ?>">
         <span class="works-image-preview">
             <?php if ($image2): ?>
                 <img src="<?php echo esc_url($image2); ?>" alt="Image 2" style="max-width: 100px; max-height: 100px;">
@@ -176,10 +183,13 @@ function works_media_meta_box_callback($post) {
         jQuery(document).ready(function($) {
             var mediaUploader;
 
+            // 画像を選択ボタンのクリックイベント
             $('.works-media-upload').click(function(e) {
                 e.preventDefault();
 
                 var targetInput = $(this).data('target');
+                var previewElement = $(this).siblings('.works-image-preview');
+                var removeButton = $(this).siblings('.works-media-remove');
 
                 // メディアアップローダーが既に存在する場合は再利用
                 if (mediaUploader) {
@@ -200,11 +210,23 @@ function works_media_meta_box_callback($post) {
                 mediaUploader.on('select', function() {
                     var attachment = mediaUploader.state().get('selection').first().toJSON();
                     $(targetInput).val(attachment.url);
-                    $(targetInput).next('.works-image-preview').html('<img src="' + attachment.url + '" style="max-width: 100px; max-height: 100px;">');
+                    previewElement.html('<img src="' + attachment.url + '" style="max-width: 100px; max-height: 100px;">');
+                    removeButton.show(); // 取り消すボタンを表示
                 });
 
                 // メディアアップローダーを開く
                 mediaUploader.open();
+            });
+
+            // 画像を取り消すボタンのクリックイベント
+            $('.works-media-remove').click(function() {
+                var targetInput = $(this).data('target');
+                var previewElement = $(this).siblings('.works-image-preview');
+
+                // フィールドの値をクリア
+                $(targetInput).val('');
+                previewElement.html(''); // プレビュー画像を削除
+                $(this).hide(); // 取り消すボタンを非表示
             });
         });
     </script>
@@ -234,14 +256,3 @@ function save_works_meta_boxes($post_id) {
     }
 }
 add_action('save_post', 'save_works_meta_boxes');
-
-// テンプレートファイル内で画像を表示する例
-$image1 = get_post_meta(get_the_ID(), '_works_image1', true);
-$image2 = get_post_meta(get_the_ID(), '_works_image2', true);
-
-if ($image1) {
-    echo '<img src="' . esc_url($image1) . '" alt="Image 1">';
-}
-if ($image2) {
-    echo '<img src="' . esc_url($image2) . '" alt="Image 2">';
-}
