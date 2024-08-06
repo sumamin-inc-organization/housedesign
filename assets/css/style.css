@@ -284,98 +284,17 @@ body.loaded {
 }
 
 .slider_range {
-    -webkit-appearance: none; /* Webkit系ブラウザのデフォルトスタイルを無効化 */
+    z-index: 3; /* ラベルより上に配置するために高いz-indexを設定 */
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 4px;
-    background: linear-gradient(to right, #f00, #00f); /* グラデーション背景 */
-    border-radius: 2px;
-    outline: none;
-    opacity: 1;
-    cursor: pointer;
-    /* transition: background 0.3s ease; */
-    pointer-events: auto; /* スライダーの操作を有効化 */
-    z-index: 5; /* スライダーが他の要素の上に表示されるように */
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    cursor: col-resize;
 }
-
-/* Webkit系ブラウザ用 */
-.slider_range::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Webkit系ブラウザのデフォルトスタイルを無効化 */
-    appearance: none;
-    width: 45px; /* サムの幅 */
-    height: 45px; /* サムの高さ */
-    /* background: rgba(255, 255, 255, 0.8); サムの背景色 */
-    border: 5px solid rgba(255, 255, 255, 0.7); /* サムのボーダー */
-    border-radius: 50%; /* サムの形状を円形に */
-    cursor: pointer;
-    box-shadow: 10px 0 15px -13px #000; /* サムに影を追加 */
-    position: relative;
-    z-index: 6;
-    /* transition: background 0.3s ease, border 0.3s ease; */
-}
-
-.slider_range::-webkit-slider-thumb:hover {
-    /* background: #fff; ホバー時のサムの背景色 */
-    /* border: 2px solid #0f0; ホバー時のサムのボーダー色 */
-}
-
-/* Mozilla系ブラウザ用 */
-.slider_range::-moz-range-thumb {
-    width: 45px; /* サムの幅 */
-    height: 45px; /* サムの高さ */
-    background: rgba(255, 255, 255, 0.8); /* サムの背景色 */
-    border: 2px solid #f00; /* サムのボーダー */
-    border-radius: 50%; /* サムの形状を円形に */
-    cursor: pointer;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* サムに影を追加 */
-    position: relative;
-    z-index: 6;
-    transition: background 0.3s ease, border 0.3s ease;
-}
-
-.slider_range::-moz-range-thumb:hover {
-    background: #fff; /* ホバー時のサムの背景色 */
-    border: 2px solid #0f0; /* ホバー時のサムのボーダー色 */
-}
-
-/* Microsoft Edge, IE用 */
-.slider_range::-ms-thumb {
-    width: 45px; /* サムの幅 */
-    height: 45px; /* サムの高さ */
-    background: rgba(255, 255, 255, 0.8); /* サムの背景色 */
-    border: 2px solid #f00; /* サムのボーダー */
-    border-radius: 50%; /* サムの形状を円形に */
-    cursor: pointer;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* サムに影を追加 */
-    position: relative;
-    z-index: 6;
-    transition: background 0.3s ease, border 0.3s ease;
-}
-
-.slider_range::-ms-thumb:hover {
-    background: #fff; /* ホバー時のサムの背景色 */
-    border: 2px solid #0f0; /* ホバー時のサムのボーダー色 */
-}
-
-.slider_range::-ms-track {
-    width: 100%;
-    height: 4px;
-    background: transparent; /* スライダートラックの背景を透明にする */
-    border-color: transparent;
-    color: transparent;
-    border-width: 0;
-    border-radius: 2px;
-}
-
-.slider_range::-ms-fill-lower {
-    background: linear-gradient(to right, #f00, #00f); /* 下部トラックのグラデーション */
-    border-radius: 2px;
-}
-
-.slider_range::-ms-fill-upper {
-    background: linear-gradient(to right, #00f, #f00); /* 上部トラックのグラデーション */
-    border-radius: 2px;
-}
-
 
 @media screen and (max-width:1024px){
     .works_ba {
@@ -1287,15 +1206,14 @@ footer{
 .flow_deco {
     overflow: hidden;
     display: flex;
-    width: 100%;
-    /* margin-inline: calc(50% - 50vw); */
-    top: -190px;
+    width: 100vw;
+    margin-inline: calc(50% - 50vw);
     position: absolute;
+    top: -190px;
 }
 
 .flow_deco_item {
-    /* flex-shrink: 0; */
-    flex: 0 0 auto;
+    flex-shrink: 0;
     white-space: nowrap;
     font-family: "Roboto", sans-serif;;
     font-size: 335px;
@@ -1303,16 +1221,14 @@ footer{
     letter-spacing: .025em;
     color: var(--colorBlueLight);
     padding-right: 60px;
-    will-change: transform;
-    width: 2501px;
 }
 
 .flow_deco_item:nth-child(odd) {
-    animation: loop 24s -12s infinite linear;
+    animation: MoveLeft 24s -12s infinite linear;
 }
 
 .flow_deco_item:nth-child(even) {
-    animation: loop2 24s infinite linear;
+    animation: MoveLeft2 24s infinite linear;
 }
 
 @keyframes flow {
@@ -1342,24 +1258,6 @@ footer{
     }
 }
 
-@keyframes loop {
-    0% {
-        transform: translateX(100%);
-    }
-    to {
-        transform: translateX(-100%);
-    }
-}
-
-@keyframes loop2 {
-    0% {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-200%);
-    }
-}
-
 @media (max-width: 1024px) {
     .flow_deco{
         top: -112px;
@@ -1367,7 +1265,6 @@ footer{
     
     .flow_deco_item{
         font-size: 200px;
-        width: 1517px;
     }
 }
 
@@ -1378,6 +1275,5 @@ footer{
 
     .flow_deco_item{
         font-size: 150px;
-        width: 1153px;
     }
 }
