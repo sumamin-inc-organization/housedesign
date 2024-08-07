@@ -12,7 +12,6 @@ jQuery(document).ready(function($) {
         setTimeout(function() {
             var videos = $('video');
             $(videos).each(function() {
-                console.log("start");
                 var video = $(this).get(0);
                 video.currentTime = 0;
                 video.play();
@@ -35,7 +34,6 @@ jQuery(window).on('load', function() {
         setTimeout(function() {
             var videos = $('video');
             $(videos).each(function() {
-                console.log("start");
                 var video = $(this).get(0);
                 video.currentTime = 0;
                 video.play();
