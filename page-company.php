@@ -91,7 +91,7 @@
                         OFFICE：〒253-0072<br>
                         神奈川県茅ヶ崎市今宿965-1-E-1503<br class="for-sp">リステージ茅ヶ崎ツインマークスF15<br>
                         BASE：〒253-0072<br>
-                        神奈川県茅ヶ崎市今宿263-5<br class="for-sp">ガレリアタウン湘南茅ヶ崎Y-1
+                        神奈川県茅ヶ崎市今宿263-5<br class="for-sp">ガレリアタウン湘南茅ヶ崎R-1
                     </p>
                 </div>
                 <div class="company_item">
