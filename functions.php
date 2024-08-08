@@ -72,7 +72,7 @@ function custom_post_types() {
         'supports' => array(
             'title',
             'editor',
-            'thumbnail',
+            //'thumbnail',
             'revisions',
         ),
         'show_in_rest' => true,
@@ -256,3 +256,56 @@ function save_works_meta_boxes($post_id) {
     }
 }
 add_action('save_post', 'save_works_meta_boxes');
+
+// 管理画面の投稿一覧にカテゴリーを表示させる
+function add_custom_column( $defaults ) {
+    global $post_type;
+    if ( 'works' == $post_type ) {
+        $defaults['works-cat'] = 'カテゴリー';
+    }
+    elseif ( 'column' == $post_type ) {
+        $defaults['column-cat'] = 'カテゴリー';
+    }
+    return $defaults;
+}
+add_filter('manage_posts_columns', 'add_custom_column');
+function add_custom_column_id($column_name, $id) {
+if( $column_name == 'works-cat' ) {
+echo get_the_term_list($id, 'works-cat', '', ', ');
+}
+elseif( $column_name == 'column-cat' ) {
+echo get_the_term_list($id, 'column-cat', '', ', ');
+}
+}
+add_action('manage_works_posts_custom_column', 'add_custom_column_id', 10, 2);
+add_action('manage_column_posts_custom_column', 'add_custom_column_id', 10, 2);
+
+// カテゴリー絞り込み検索
+function add_post_taxonomy_restrict_filter() {
+    global $post_type;
+    if ( 'works' == $post_type ) {
+        ?>
+        <select name="works-cat">
+            <option value="">カテゴリー指定なし</option>
+            <?php
+            $terms = get_terms('works-cat');
+            foreach ($terms as $term) { ?>
+                <option value="<?php echo $term->slug; ?>"><?php echo $term->name; ?></option>
+            <?php } ?>
+        </select>
+        <?php
+    }
+    else if ( 'column' == $post_type ) {
+        ?>
+        <select name="column-cat">
+            <option value="">カテゴリー指定なし</option>
+            <?php
+            $terms = get_terms('column-cat');
+            foreach ($terms as $term) { ?>
+                <option value="<?php echo $term->slug; ?>"><?php echo $term->name; ?></option>
+            <?php } ?>
+        </select>
+        <?php
+    }
+}
+add_action( 'restrict_manage_posts', 'add_post_taxonomy_restrict_filter' );
